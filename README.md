@@ -1,50 +1,100 @@
-# React + TypeScript + Vite
+# AI Tools Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, interactive dashboard built with React, TypeScript, and Tailwind CSS for exploring AI tools, frameworks, and models. This application helps AI engineers, software developers, and data engineers discover and compare various tools in the AI ecosystem.
 
-Currently, two official plugins are available:
+![MIT License](https://badgen.net/badge/license/MIT/blue)
+![Demonstrate](https://badgen.net/badge/stage/demonstrate/green)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<!--
+Other 4D cycle badges
+![Discover](https://badgen.net/badge/stage/discover/orange)
+![Discern](https://badgen.net/badge/stage/discern/gray)
+![Develop](https://badgen.net/badge/stage/develop/blue)
+![Demonstrate](https://badgen.net/badge/stage/demonstrate/green)
+-->
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- 🔍 **Real-time Search**: Filter tools and models instantly as you type
+- 🏷️ **Smart Filtering**: Filter by layer (tech stack) and license type
+- 📱 **Responsive Design**: Optimized for all screen sizes
+- 🎨 **Visual Categories**: Clear visual categorization with colored tags
+- 📚 **Comprehensive Database**: Extensive collection of AI tools and models
+- 📄 **Pagination**: Easy navigation through large datasets
+- 🔄 **Toggle Views**: Switch between Tech Stack and Models views
+- 🔗 **Resource Links**: Direct links to documentation and resources
 
-- Configure the top-level `parserOptions` property like this:
+## Tech Stack
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- React
+- TypeScript
+- Tailwind CSS
+- Vite
+- Lucide React Icons
+- shadcn/ui Components
+
+## 📋 Requirements
+
+- [Node.js](https://nodejs.org/en/) (v14 or higher)
+- npm or yarn
+
+## 🚀 Getting Started
+
+These are the instructions for setting up a local development environment.
+
+### Installation
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/yourusername/ai-tools-explorer.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd ai-tools-explorer
+    ```
+
+3. Install dependencies:
+
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+
+### Running the app
+
+```bash
+npm run dev
+# or
+yarn dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 👏 How to Contribute
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Details on how to get involved with the project.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### [Code of Conduct][code]
+
+We have adopted a Code of Conduct that we expect project participants to adhere to.
+Please read the [full text][code] so that you can understand what actions will and will not be tolerated.
+
+[code]: https://github.com/FaithTechInternal/.github/blob/main/CODE_OF_CONDUCT.md
+
+### Contributing Guide
+
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+Project is MIT licensed, as found in the [LICENSE][license] file.
+
+[license]: ./LICENSE
