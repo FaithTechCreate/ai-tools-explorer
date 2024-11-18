@@ -1,6 +1,6 @@
 # AI Tools Explorer
 
-A modern, interactive dashboard built with React, TypeScript, and Tailwind CSS for exploring AI tools, frameworks, and models. This application helps AI engineers, software developers, and data engineers discover and compare various tools in the AI ecosystem.
+A dashboard built for exploring AI tools, frameworks, and models. This application helps AI engineers, software developers, and data engineers discover and compare various tools in the AI ecosystem.
 
 ![MIT License](https://badgen.net/badge/license/MIT/blue)
 ![Demonstrate](https://badgen.net/badge/stage/demonstrate/green)
