@@ -1,23 +1,36 @@
 import { useState, useMemo } from 'react';
-import { Search, Filter, Layout, Code2, Database, Brain, Eye, Server } from 'lucide-react';
+import {
+  Search,
+  Filter,
+  Layout,
+  Code2,
+  Database,
+  Brain,
+  Eye,
+  Server,
+  ChevronLeft,
+  ChevronRight,
+} from 'lucide-react';
 import { techStackData } from '../data/techStackData';
 import { modelsData } from '../data/modelsData';
+import { TechStack, Model } from '../types';
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState<'tech' | 'models'>('tech');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedLayer, setSelectedLayer] = useState<string>('');
   const [selectedLicense, setSelectedLicense] = useState<string>('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
 
   // Get unique layers and licenses for filters
   const layers = useMemo(() => Array.from(new Set(techStackData.map(item => item.Layer))), []);
-
   const licenses = useMemo(
     () => Array.from(new Set([...techStackData, ...modelsData].map(item => item.License))),
     []
   );
 
-  // Filter and search logic
+  // Filter and search logic with proper typing
   const filteredTechStack = useMemo(() => {
     return techStackData.filter(item => {
       const matchesSearch =
@@ -38,6 +51,102 @@ export default function Dashboard() {
       return matchesSearch && matchesLicense;
     });
   }, [searchQuery, selectedLicense]);
+
+  // Pagination logic with type safety
+  const currentData = activeTab === 'tech' ? filteredTechStack : filteredModels;
+  const totalPages = Math.ceil(currentData.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentItems = currentData.slice(startIndex, endIndex);
+
+  // Reset to first page when filters change
+  useMemo(() => {
+    setCurrentPage(1);
+  }, [searchQuery, selectedLayer, selectedLicense, activeTab]);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Type guard to check if item is TechStack
+  const isTechStack = (item: TechStack | Model): item is TechStack => {
+    return (item as TechStack).Layer !== undefined;
+  };
+
+  const renderTechStackCard = (item: TechStack) => (
+    <div
+      key={item.Name}
+      className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+    >
+      <h3 className="text-lg font-semibold mb-2">{item.Name}</h3>
+      <p className="text-gray-600 text-sm mb-4">{item.Description}</p>
+      <div className="flex flex-wrap gap-2 mb-4">
+        <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">
+          {item.Layer}
+        </span>
+        <span className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">
+          {item.Components}
+        </span>
+        <span className="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">
+          {item.License}
+        </span>
+      </div>
+      <a
+        href={item.Link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-500 hover:text-blue-600 text-sm flex items-center"
+      >
+        Learn More
+        <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+          />
+        </svg>
+      </a>
+    </div>
+  );
+
+  const renderModelCard = (item: Model) => (
+    <div
+      key={item.Name}
+      className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+    >
+      <h3 className="text-lg font-semibold mb-2">{item.Name}</h3>
+      <p className="text-gray-600 text-sm mb-2">{item.Description}</p>
+      <p className="text-gray-700 text-sm mb-4">
+        <span className="font-medium">Usage:</span> {item.Usage}
+      </p>
+      <div className="flex flex-wrap gap-2 mb-4">
+        <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">
+          {item.Type}
+        </span>
+        <span className="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">
+          {item.License}
+        </span>
+      </div>
+      <a
+        href={item.Link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-500 hover:text-blue-600 text-sm flex items-center"
+      >
+        Learn More
+        <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+          />
+        </svg>
+      </a>
+    </div>
+  );
 
   return (
     <div className="min-h-screen bg-gray-50 p-8">
@@ -116,92 +225,53 @@ export default function Dashboard() {
           </div>
         </div>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {activeTab === 'tech'
-            ? filteredTechStack.map(item => (
-                <div
-                  key={item.Name}
-                  className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
-                >
-                  <h3 className="text-lg font-semibold mb-2">{item.Name}</h3>
-                  <p className="text-gray-600 text-sm mb-4">{item.Description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">
-                      {item.Layer}
-                    </span>
-                    <span className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">
-                      {item.Components}
-                    </span>
-                    <span className="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">
-                      {item.License}
-                    </span>
-                  </div>
-                  <a
-                    href={item.Link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-500 hover:text-blue-600 text-sm flex items-center"
-                  >
-                    Learn More
-                    <svg
-                      className="w-4 h-4 ml-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                      />
-                    </svg>
-                  </a>
-                </div>
-              ))
-            : filteredModels.map(item => (
-                <div
-                  key={item.Name}
-                  className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
-                >
-                  <h3 className="text-lg font-semibold mb-2">{item.Name}</h3>
-                  <p className="text-gray-600 text-sm mb-2">{item.Description}</p>
-                  <p className="text-gray-700 text-sm mb-4">
-                    <span className="font-medium">Usage:</span> {item.Usage}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">
-                      {item.Type}
-                    </span>
-                    <span className="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">
-                      {item.License}
-                    </span>
-                  </div>
-                  <a
-                    href={item.Link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-500 hover:text-blue-600 text-sm flex items-center"
-                  >
-                    Learn More
-                    <svg
-                      className="w-4 h-4 ml-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                      />
-                    </svg>
-                  </a>
-                </div>
-              ))}
+        {/* Results Count */}
+        <div className="mb-4 text-sm text-gray-600">
+          Showing {startIndex + 1}-{Math.min(endIndex, currentData.length)} of {currentData.length}{' '}
+          items
         </div>
+
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          {currentItems.map(item =>
+            isTechStack(item) ? renderTechStackCard(item) : renderModelCard(item)
+          )}
+        </div>
+
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <div className="flex justify-center items-center gap-2 mt-6">
+            <button
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+              className="p-2 rounded-lg hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <ChevronLeft size={20} />
+            </button>
+
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+              <button
+                key={page}
+                onClick={() => handlePageChange(page)}
+                className={`px-3 py-1 rounded-lg ${
+                  currentPage === page
+                    ? 'bg-blue-500 text-white'
+                    : 'hover:bg-gray-100 text-gray-600'
+                }`}
+              >
+                {page}
+              </button>
+            ))}
+
+            <button
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className="p-2 rounded-lg hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
