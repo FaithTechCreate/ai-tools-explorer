@@ -1,48 +1,7 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { Search, Filter, Layout, Code2, Database, Brain, Eye, Server } from 'lucide-react';
-
-// Define TypeScript interfaces
-interface TechStack {
-  Name: string;
-  Description: string;
-  Link: string;
-  Layer: string;
-  Components: string;
-  License: string;
-}
-
-interface Model {
-  Name: string;
-  Description: string;
-  Link: string;
-  Type: string;
-  Usage: string;
-  License: string;
-}
-
-const techStackData: TechStack[] = [
-  {
-    Name: "Flask",
-    Description: "A lightweight WSGI web application framework in Python.",
-    Link: "https://flask.palletsprojects.com/",
-    Layer: "Application",
-    Components: "API Development",
-    License: "Open Source"
-  },
-  // ... more data would be here in real implementation
-];
-
-const modelsData: Model[] = [
-  {
-    Name: "Whisper",
-    Description: "Whisper is an automatic speech recognition (ASR) system developed by OpenAI.",
-    Link: "https://huggingface.co/openai/whisper-large-v2",
-    Type: "Automatic Speech Recognition",
-    Usage: "Transcribing audio to text",
-    License: "Open Source"
-  },
-  // ... more data would be here in real implementation
-];
+import { techStackData } from '../data/techStackData';
+import { modelsData } from '../data/modelsData';
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState<'tech' | 'models'>('tech');
@@ -85,7 +44,7 @@ export default function Dashboard() {
     <div className="min-h-screen bg-gray-50 p-8">
       <div className="max-w-7xl mx-auto">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">AI Technology Explorer</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-4">AI Tools Explorer</h1>
           <p className="text-gray-600">Discover and explore AI tools, frameworks, and models</p>
         </div>
 
