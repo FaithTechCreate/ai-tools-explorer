@@ -1,16 +1,5 @@
 import { useState, useMemo } from 'react';
-import {
-  Search,
-  Filter,
-  Layout,
-  Code2,
-  Database,
-  Brain,
-  Eye,
-  Server,
-  ChevronLeft,
-  ChevronRight,
-} from 'lucide-react';
+import { Search, Code2, Brain, ChevronLeft, ChevronRight } from 'lucide-react';
 import { techStackData } from '../data/techStackData';
 import { modelsData } from '../data/modelsData';
 import { TechStack, Model } from '../types';
