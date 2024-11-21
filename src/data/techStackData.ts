@@ -85,8 +85,8 @@ export const techStackData: TechStack[] = [
   {
     Name: 'React',
     Description:
-      'An AI-powered coding assistant by Sourcegraph to make developers more productive.',
-    Link: 'https://sourcegraph.com/cody',
+      'The library for web and native user interfaces',
+    Link: 'https://react.dev/',
     Layer: 'Application',
     Components: 'Frontend',
     License: 'Open Source',
