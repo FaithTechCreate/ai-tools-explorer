@@ -12,6 +12,11 @@ export default function Dashboard() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
+  // Case insensitive string comparison helper
+  const compareStrings = (a: string, b: string) => {
+    return a.toLowerCase().localeCompare(b.toLowerCase());
+  };
+
   // Get unique layers and licenses for filters
   const layers = useMemo(() => Array.from(new Set(techStackData.map(item => item.Layer))), []);
   const licenses = useMemo(
@@ -19,26 +24,62 @@ export default function Dashboard() {
     []
   );
 
-  // Filter and search logic with proper typing
+  // Filter and sort tech stack items
   const filteredTechStack = useMemo(() => {
-    return techStackData.filter(item => {
-      const matchesSearch =
-        item.Name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.Description.toLowerCase().includes(searchQuery.toLowerCase());
-      const matchesLayer = !selectedLayer || item.Layer === selectedLayer;
-      const matchesLicense = !selectedLicense || item.License === selectedLicense;
-      return matchesSearch && matchesLayer && matchesLicense;
-    });
+    return techStackData
+      .filter(item => {
+        const matchesSearch =
+          item.Name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.Description.toLowerCase().includes(searchQuery.toLowerCase());
+        const matchesLayer = !selectedLayer || item.Layer === selectedLayer;
+        const matchesLicense = !selectedLicense || item.License === selectedLicense;
+        return matchesSearch && matchesLayer && matchesLicense;
+      })
+      .sort((a, b) => {
+        // Sort by Layer
+        const layerComparison = compareStrings(a.Layer, b.Layer);
+        if (layerComparison !== 0) {
+          return layerComparison;
+        }
+        // Then by Component
+        const componentComparison = compareStrings(a.Components, b.Components);
+        if (componentComparison !== 0) {
+          return componentComparison;
+        }
+        // Then by License
+        const licenseComparison = compareStrings(a.License, b.License);
+        if (licenseComparison !== 0) {
+          return licenseComparison;
+        }
+        // Finally by Name
+        return compareStrings(a.Name, b.Name);
+      });
   }, [searchQuery, selectedLayer, selectedLicense]);
 
+  // Filter and sort models
   const filteredModels = useMemo(() => {
-    return modelsData.filter(item => {
-      const matchesSearch =
-        item.Name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.Description.toLowerCase().includes(searchQuery.toLowerCase());
-      const matchesLicense = !selectedLicense || item.License === selectedLicense;
-      return matchesSearch && matchesLicense;
-    });
+    return modelsData
+      .filter(item => {
+        const matchesSearch =
+          item.Name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.Description.toLowerCase().includes(searchQuery.toLowerCase());
+        const matchesLicense = !selectedLicense || item.License === selectedLicense;
+        return matchesSearch && matchesLicense;
+      })
+      .sort((a, b) => {
+        // Sort by Type
+        const typeComparison = compareStrings(a.Type, b.Type);
+        if (typeComparison !== 0) {
+          return typeComparison;
+        }
+        // Then by License
+        const licenseComparison = compareStrings(a.License, b.License);
+        if (licenseComparison !== 0) {
+          return licenseComparison;
+        }
+        // Finally by Name
+        return compareStrings(a.Name, b.Name);
+      });
   }, [searchQuery, selectedLicense]);
 
   // Pagination logic with type safety
