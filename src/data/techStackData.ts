@@ -93,8 +93,8 @@ export const techStackData: TechStack[] = [
   },
   {
     Name: 'Angular',
-    Description: 'A JavaScript library for building user interfaces, maintained by Facebook.',
-    Link: 'https://reactjs.org/',
+    Description: 'A platform for building mobile and desktop web applications using TypeScript/JavaScript.',
+    Link: 'https://angular.dev/',
     Layer: 'Application',
     Components: 'Frontend',
     License: 'Open Source',
@@ -102,16 +102,16 @@ export const techStackData: TechStack[] = [
   {
     Name: 'Vue.js',
     Description:
-      'A platform for building mobile and desktop web applications using TypeScript/JavaScript.',
-    Link: 'https://angular.io/',
+      'A progressive JavaScript framework for building user interfaces.',
+    Link: 'https://vuejs.org/',
     Layer: 'Application',
     Components: 'Frontend',
     License: 'Open Source',
   },
   {
     Name: 'Vercel',
-    Description: 'A progressive JavaScript framework for building user interfaces.',
-    Link: 'https://vuejs.org/',
+    Description: 'Provides developer tools and cloud infrastructure to build, scale, and secure a faster, more personalized web.',
+    Link: 'https://vercel.com/',
     Layer: 'Application',
     Components: 'Hosting',
     License: 'Proprietary',
@@ -119,7 +119,7 @@ export const techStackData: TechStack[] = [
   {
     Name: 'Replit',
     Description: 'A cloud platform for static sites and Serverless Functions.',
-    Link: 'https://vercel.com/',
+    Link: 'https://replit.com/',
     Layer: 'Application',
     Components: 'Hosting, IDE',
     License: 'Proprietary',
