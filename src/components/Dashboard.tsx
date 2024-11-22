@@ -1,8 +1,9 @@
 import { useState, useMemo } from 'react';
-import { Search, Code2, Brain, ChevronLeft, ChevronRight, Github, AlertCircle } from 'lucide-react';
+import { Search, Code2, Brain, Github, AlertCircle } from 'lucide-react';
 import { techStackData } from '../data/techStackData';
 import { modelsData } from '../data/modelsData';
 import { TechStack, Model } from '../types';
+import Pagination from './Pagination';
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState<'tech' | 'models'>('tech');
@@ -11,7 +12,7 @@ export default function Dashboard() {
   const [selectedComponent, setSelectedComponent] = useState<string>('');
   const [selectedLicense, setSelectedLicense] = useState<string>('');
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
+  const itemsPerPage = 9;
 
   // Case insensitive string comparison helper
   const compareStrings = (a: string, b: string) => {
@@ -300,37 +301,11 @@ export default function Dashboard() {
 
         {/* Pagination Controls */}
         {totalPages > 1 && (
-          <div className="flex justify-center items-center gap-2 mt-6">
-            <button
-              onClick={() => handlePageChange(currentPage - 1)}
-              disabled={currentPage === 1}
-              className="p-2 rounded-lg hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              <ChevronLeft size={20} />
-            </button>
-
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-              <button
-                key={page}
-                onClick={() => handlePageChange(page)}
-                className={`px-3 py-1 rounded-lg ${
-                  currentPage === page
-                    ? 'bg-blue-500 text-white'
-                    : 'hover:bg-gray-100 text-gray-600'
-                }`}
-              >
-                {page}
-              </button>
-            ))}
-
-            <button
-              onClick={() => handlePageChange(currentPage + 1)}
-              disabled={currentPage === totalPages}
-              className="p-2 rounded-lg hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              <ChevronRight size={20} />
-            </button>
-          </div>
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+          />
         )}
 
         {/* Contribution Links */}
