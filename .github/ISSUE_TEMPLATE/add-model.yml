@@ -1,0 +1,117 @@
+name: Add New AI Model
+description: Submit a new AI model to be added to the AI Tools Explorer
+title: 'Add: [Model Name]'
+labels: ['new-item', 'model']
+body:
+  - type: markdown
+    attributes:
+      value: '## Basic Information'
+
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: The name of the model
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A brief description of the model and its capabilities
+    validations:
+      required: true
+
+  - type: input
+    id: link
+    attributes:
+      label: Link
+      description: Link to model documentation, paper, or download
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type
+      description: Primary type/category of the model
+      options:
+        - Large Language Model
+        - Text-to-Image Generation
+        - Text-to-Video Generation
+        - Automatic Speech Recognition
+        - Natural Language Processing
+        - Other (specify in notes)
+    validations:
+      required: true
+
+  - type: textarea
+    id: usage
+    attributes:
+      label: Usage
+      description: Primary use cases and applications (e.g., Text generation, language understanding, code generation)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: license
+    attributes:
+      label: License
+      description: Model license type
+      options:
+        - Open Source
+        - Open-ish
+        - Proprietary
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: '## Technical Details'
+
+  - type: textarea
+    id: capabilities
+    attributes:
+      label: Key Capabilities
+      description: List the main capabilities and features of the model
+    validations:
+      required: false
+
+  - type: input
+    id: parameters
+    attributes:
+      label: Model Size
+      description: Number of parameters (if applicable)
+    validations:
+      required: false
+
+  - type: input
+    id: architecture
+    attributes:
+      label: Architecture
+      description: Model architecture (e.g., Transformer, Diffusion)
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: Verified model is publicly available or documented
+          required: true
+        - label: Checked that the model isn't already in the database
+          required: true
+        - label: Provided accurate license information
+          required: true
+        - label: Included working documentation/reference link
+          required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      description: Any other relevant information about the model
+    validations:
+      required: false
