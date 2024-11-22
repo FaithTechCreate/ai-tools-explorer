@@ -1,0 +1,112 @@
+name: Add New Tech Stack Item
+description: Submit a new tool or framework to be added to the AI Tools Explorer
+title: 'Add: [Tool Name]'
+labels: ['new-item', 'tech-stack']
+body:
+  - type: markdown
+    attributes:
+      value: '## Basic Information'
+
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: The name of the tool/framework
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A brief (1-2 sentences) description of what the tool does
+    validations:
+      required: true
+
+  - type: input
+    id: link
+    attributes:
+      label: Link
+      description: Official documentation or repository URL
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: '## Classification'
+
+  - type: dropdown
+    id: layer
+    attributes:
+      label: Layer
+      description: Choose the primary layer this tool belongs to
+      options:
+        - Application
+        - Data
+        - Infrastructure
+        - Model
+        - Observability
+    validations:
+      required: true
+
+  - type: input
+    id: components
+    attributes:
+      label: Components
+      description: Main functionality/category (e.g., API Development, Vector Store, Model Serving)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: license
+    attributes:
+      label: License
+      description: Choose the license type
+      options:
+        - Open Source
+        - Open-ish
+        - Proprietary
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: '## Additional Context'
+
+  - type: textarea
+    id: usage
+    attributes:
+      label: Current Usage
+      description: Brief description of how the tool is currently being used in AI/ML workflows
+    validations:
+      required: false
+
+  - type: textarea
+    id: features
+    attributes:
+      label: Key Features
+      description: List 2-3 key features or capabilities
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: Verified the tool is actively maintained
+          required: true
+        - label: Checked that the tool isn't already in the database
+          required: true
+        - label: Provided accurate license information
+          required: true
+        - label: Included working documentation link
+          required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Any additional information that might be relevant
+    validations:
+      required: false
