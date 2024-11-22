@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { Search, Code2, Brain, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Search, Code2, Brain, ChevronLeft, ChevronRight, Github, AlertCircle } from 'lucide-react';
 import { techStackData } from '../data/techStackData';
 import { modelsData } from '../data/modelsData';
 import { TechStack, Model } from '../types';
@@ -185,9 +185,20 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-gray-50 p-8">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">AI Tools Explorer</h1>
-          <p className="text-gray-600">Discover and explore AI tools, frameworks, and models</p>
+        <div className="flex justify-between items-start mb-8">
+          <div>
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">AI Tools Explorer</h1>
+            <p className="text-gray-600">Discover and explore AI tools, frameworks, and models</p>
+          </div>
+          <a
+            href="https://github.com/FaithTechCreate/ai-tools-explorer/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-700 transition-colors"
+          >
+            <Github size={20} />
+            <span>View on GitHub</span>
+          </a>
         </div>
 
         {/* Search and Filters */}
@@ -321,6 +332,42 @@ export default function Dashboard() {
             </button>
           </div>
         )}
+
+        {/* Contribution Links */}
+        <div className="mt-12 border-t pt-8">
+          <div className="text-center">
+            <h2 className="text-xl font-semibold mb-4">Help Keep Our Database Current</h2>
+            <div className="flex justify-center gap-4">
+              <a
+                href="https://github.com/FaithTechCreate/ai-tools-explorer/issues/new?template=add-tech-stack.yml"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+              >
+                <Code2 size={20} />
+                <span>Submit a new Tech Stack</span>
+              </a>
+              <a
+                href="https://github.com/FaithTechCreate/ai-tools-explorer/issues/new?template=add-model.yml"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors"
+              >
+                <Brain size={20} />
+                <span>Submit a new Model</span>
+              </a>
+              <a
+                href="https://github.com/FaithTechCreate/ai-tools-explorer/issues/new"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition-colors"
+              >
+                <AlertCircle size={20} />
+                <span>Report an Issue</span>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
