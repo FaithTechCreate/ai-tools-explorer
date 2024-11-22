@@ -8,6 +8,7 @@ export default function Dashboard() {
   const [activeTab, setActiveTab] = useState<'tech' | 'models'>('tech');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedLayer, setSelectedLayer] = useState<string>('');
+  const [selectedComponent, setSelectedComponent] = useState<string>('');
   const [selectedLicense, setSelectedLicense] = useState<string>('');
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
@@ -19,6 +20,10 @@ export default function Dashboard() {
 
   // Get unique layers and licenses for filters
   const layers = useMemo(() => Array.from(new Set(techStackData.map(item => item.Layer))), []);
+  const components = useMemo(() => {
+    const allComponents = techStackData.flatMap(item => item.Components.split(', '));
+    return Array.from(new Set(allComponents)).sort();
+  }, []);
   const licenses = useMemo(
     () => Array.from(new Set([...techStackData, ...modelsData].map(item => item.License))),
     []
@@ -32,29 +37,23 @@ export default function Dashboard() {
           item.Name.toLowerCase().includes(searchQuery.toLowerCase()) ||
           item.Description.toLowerCase().includes(searchQuery.toLowerCase());
         const matchesLayer = !selectedLayer || item.Layer === selectedLayer;
+        const matchesComponent = !selectedComponent || item.Components.includes(selectedComponent);
         const matchesLicense = !selectedLicense || item.License === selectedLicense;
-        return matchesSearch && matchesLayer && matchesLicense;
+        return matchesSearch && matchesLayer && matchesComponent && matchesLicense;
       })
       .sort((a, b) => {
-        // Sort by Layer
         const layerComparison = compareStrings(a.Layer, b.Layer);
-        if (layerComparison !== 0) {
-          return layerComparison;
-        }
-        // Then by Component
+        if (layerComparison !== 0) return layerComparison;
+
         const componentComparison = compareStrings(a.Components, b.Components);
-        if (componentComparison !== 0) {
-          return componentComparison;
-        }
-        // Then by License
+        if (componentComparison !== 0) return componentComparison;
+
         const licenseComparison = compareStrings(a.License, b.License);
-        if (licenseComparison !== 0) {
-          return licenseComparison;
-        }
-        // Finally by Name
+        if (licenseComparison !== 0) return licenseComparison;
+
         return compareStrings(a.Name, b.Name);
       });
-  }, [searchQuery, selectedLayer, selectedLicense]);
+  }, [searchQuery, selectedLayer, selectedComponent, selectedLicense]);
 
   // Filter and sort models
   const filteredModels = useMemo(() => {
@@ -115,9 +114,14 @@ export default function Dashboard() {
         <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">
           {item.Layer}
         </span>
-        <span className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">
-          {item.Components}
-        </span>
+        {item.Components.split(', ').map(component => (
+          <span
+            key={component}
+            className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full"
+          >
+            {component}
+          </span>
+        ))}
         <span className="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">
           {item.License}
         </span>
@@ -216,18 +220,33 @@ export default function Dashboard() {
           </select>
 
           {activeTab === 'tech' && (
-            <select
-              className="border rounded-lg px-4 py-2"
-              value={selectedLayer}
-              onChange={e => setSelectedLayer(e.target.value)}
-            >
-              <option value="">All Layers</option>
-              {layers.map(layer => (
-                <option key={layer} value={layer}>
-                  {layer}
-                </option>
-              ))}
-            </select>
+            <>
+              <select
+                className="border rounded-lg px-4 py-2"
+                value={selectedLayer}
+                onChange={e => setSelectedLayer(e.target.value)}
+              >
+                <option value="">All Layers</option>
+                {layers.map(layer => (
+                  <option key={layer} value={layer}>
+                    {layer}
+                  </option>
+                ))}
+              </select>
+
+              <select
+                className="border rounded-lg px-4 py-2"
+                value={selectedComponent}
+                onChange={e => setSelectedComponent(e.target.value)}
+              >
+                <option value="">All Components</option>
+                {components.map(component => (
+                  <option key={component} value={component}>
+                    {component}
+                  </option>
+                ))}
+              </select>
+            </>
           )}
         </div>
 
