@@ -1392,10 +1392,38 @@ export const techStackData: TechStack[] = [
   },
   {
     Name: 'Power BI',
-    Description: 'Power BI is a business analytics tool developed by Microsoft that enables users to create interactive data visualizations, customize dashboards, and share insights across organizations. It features AI-powered analytics, extensive data source connectivity, and advanced data modeling capabilities using DAX.',
+    Description:
+      'Power BI is a business analytics tool developed by Microsoft that enables users to create interactive data visualizations, customize dashboards, and share insights across organizations. It features AI-powered analytics, extensive data source connectivity, and advanced data modeling capabilities using DAX.',
     Link: 'https://www.microsoft.com/en-us/power-platform/products/power-bi/',
     Layer: 'Data',
     Components: 'Visualization',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'La Plateforme',
+    Description:
+      'La Plateforme enables developers and enterprises to build new products and applications, powered by Mistral’s open source and commercial LLMs.',
+    Link: 'https://console.mistral.ai/',
+    Layer: 'Model',
+    Components: 'Playground',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Google AI Studio',
+    Description:
+      'Google AI Studio is a browser-based IDE for prototyping with generative models. Google AI Studio lets you quickly try out models and experiment with different prompts.',
+    Link: 'https://aistudio.google.com/',
+    Layer: 'Model',
+    Components: 'Playground',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Anthropic Console',
+    Description:
+      'Developer interface for Claude for crafting and testing powerful prompts directly in your browser.',
+    Link: 'https://console.anthropic.com',
+    Layer: 'Model',
+    Components: 'Playground',
     License: 'Proprietary',
   },
 ];
