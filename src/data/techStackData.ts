@@ -1390,4 +1390,12 @@ export const techStackData: TechStack[] = [
     Components: 'Data Processing, Data Orchestration',
     License: 'Proprietary',
   },
+  {
+    Name: 'Power BI',
+    Description: 'Power BI is a business analytics tool developed by Microsoft that enables users to create interactive data visualizations, customize dashboards, and share insights across organizations. It features AI-powered analytics, extensive data source connectivity, and advanced data modeling capabilities using DAX.',
+    Link: 'https://www.microsoft.com/en-us/power-platform/products/power-bi/',
+    Layer: 'Data',
+    Components: 'Visualization',
+    License: 'Proprietary',
+  },
 ];
