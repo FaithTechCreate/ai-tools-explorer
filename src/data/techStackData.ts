@@ -84,8 +84,7 @@ export const techStackData: TechStack[] = [
   },
   {
     Name: 'React',
-    Description:
-      'The library for web and native user interfaces',
+    Description: 'The library for web and native user interfaces',
     Link: 'https://react.dev/',
     Layer: 'Application',
     Components: 'Frontend',
@@ -93,7 +92,8 @@ export const techStackData: TechStack[] = [
   },
   {
     Name: 'Angular',
-    Description: 'A platform for building mobile and desktop web applications using TypeScript/JavaScript.',
+    Description:
+      'A platform for building mobile and desktop web applications using TypeScript/JavaScript.',
     Link: 'https://angular.dev/',
     Layer: 'Application',
     Components: 'Frontend',
@@ -101,8 +101,7 @@ export const techStackData: TechStack[] = [
   },
   {
     Name: 'Vue.js',
-    Description:
-      'A progressive JavaScript framework for building user interfaces.',
+    Description: 'A progressive JavaScript framework for building user interfaces.',
     Link: 'https://vuejs.org/',
     Layer: 'Application',
     Components: 'Frontend',
@@ -110,7 +109,8 @@ export const techStackData: TechStack[] = [
   },
   {
     Name: 'Vercel',
-    Description: 'Provides developer tools and cloud infrastructure to build, scale, and secure a faster, more personalized web.',
+    Description:
+      'Provides developer tools and cloud infrastructure to build, scale, and secure a faster, more personalized web.',
     Link: 'https://vercel.com/',
     Layer: 'Application',
     Components: 'Hosting',
@@ -1366,7 +1366,8 @@ export const techStackData: TechStack[] = [
   },
   {
     Name: 'Gloo AI',
-    Description: 'AI Tools for human flourishing grounded in the principles of ethical Christian AI',
+    Description:
+      'AI Tools for human flourishing grounded in the principles of ethical Christian AI',
     Link: 'https://docs.ai.gloo.us/',
     Layer: 'Infrastructure',
     Components: 'Model Serving',
@@ -1374,11 +1375,19 @@ export const techStackData: TechStack[] = [
   },
   {
     Name: 'FaithCopilot',
-    Description:
-      "AI tool for Christian ministries",
+    Description: 'AI tool for Christian ministries',
     Link: 'https://faithcopilot.com/',
     Layer: 'Model',
     Components: 'Playground',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Azure Data Factory',
+    Description:
+      'Azure Data Factory is a cloud-based data integration service for creating and automating data pipelines across diverse sources, enabling scalable and reliable workflows with code-free ETL capabilities and seamless Azure ecosystem integration.',
+    Link: 'https://azure.microsoft.com/en-us/products/data-factory/',
+    Layer: 'Data',
+    Components: 'Data Processing, Data Orchestration',
     License: 'Proprietary',
   },
 ];
