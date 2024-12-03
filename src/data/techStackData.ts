@@ -398,7 +398,7 @@ export const techStackData: TechStack[] = [
       'Elasticsearch is a distributed, RESTful search and analytics engine capable of addressing a growing number of use cases.',
     Link: 'https://www.elastic.co/elasticsearch/',
     Layer: 'Data',
-    Components: 'Vector Store, Data Store',
+    Components: 'Data Store, Vector Store',
     License: 'Open Source',
   },
   {
@@ -406,7 +406,7 @@ export const techStackData: TechStack[] = [
     Description: 'NoSQL and Vector DB for Generative AI, Instantly, at Scale',
     Link: 'https://www.datastax.com/products/datastax-astra',
     Layer: 'Data',
-    Components: 'Vector Store, Data Store',
+    Components: 'Data Store, Vector Store',
     License: 'Proprietary',
   },
   {
@@ -1425,5 +1425,152 @@ export const techStackData: TechStack[] = [
     Layer: 'Model',
     Components: 'Playground',
     License: 'Proprietary',
+  },
+  {
+    Name: 'DeepSeek Platform',
+    Description: 'API access to the latest DeepSeek models',
+    Link: 'https://platform.deepseek.com/',
+    Layer: 'Model',
+    Components: 'Playground',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Le Chat',
+    Description:
+      'Le Chat is the free generative AI work assistant from Mistral AI. It includes access to the their latest models plus search, vision, ideation, and coding capabilities.',
+    Link: 'https://chat.mistral.ai/',
+    Layer: 'Application',
+    Components: 'Coding Assistant, Content Creation',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'ChatGPT',
+    Description: 'ChatGPT can help with writing, learning, brainstorming, coding, and more.',
+    Link: 'https://chatgpt.com/',
+    Layer: 'Application',
+    Components: 'Coding Assistant, Content Creation',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Perplexity',
+    Description:
+      'Perplexity is a free AI-powered answer engine that provides accurate, trusted, and real-time answers to any question.',
+    Link: 'https://www.perplexity.ai/',
+    Layer: 'Application',
+    Components: 'Coding Assistant, Content Creation',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Claude',
+    Description:
+      'Claude is a highly performant, trustworthy, and intelligent AI platform built by Anthropic. Claude excels at tasks involving language, reasoning, analysis, coding, and more.',
+    Link: 'http://www.claude.ai/',
+    Layer: 'Application',
+    Components: 'Coding Assistant, Content Creation',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'DeepSeek',
+    Description:
+      'DeepSeek is an AI platform that offers advanced models for coding, mathematics, and reasoning.',
+    Link: 'https://www.deepseek.com/',
+    Layer: 'Application',
+    Components: 'Coding Assistant, Content Creation',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'ElevenLabs',
+    Description:
+      'ElevenLabs is an AI audio research and deployment company, providing API access and SDKs to generate speech programmatically.',
+    Link: 'https://elevenlabs.io/',
+    Layer: 'Application',
+    Components: 'Content Creation',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Resemble AI',
+    Description: 'The Generative Voice AI Platform designed for scale and security',
+    Link: 'https://resemble.ai/',
+    Layer: 'Application',
+    Components: 'Content Creation',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'HeyGen',
+    Description: 'HeyGen is a platform for creating realistic AI avatars and videos.',
+    Link: 'https://www.heygen.com/api',
+    Layer: 'Application',
+    Components: 'Content Creation',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Runway',
+    Description:
+      'Runway offers tools for advancing creativity with artificial intelligence. Their platform includes generative video models which enable users to generate and edit videos using text, images, or video clips as inputs.',
+    Link: 'https://runwayml.com/',
+    Layer: 'Application',
+    Components: 'Content Creation',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'PlayHT',
+    Description:
+      'PlayHT is a cutting-edge AI voice generator and text-to-speech synthesis platform that provides a real-time voice API for conversational AI and applications.',
+    Link: 'https://play.ht/',
+    Layer: 'Application',
+    Components: 'Content Creation',
+    License: 'Proprietary',
+  },
+  {
+    Name: '',
+    Description: '',
+    Link: '',
+    Layer: 'Application',
+    Components: 'Content Creation',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Locofy',
+    Description:
+      'Turn your designs into developer-friendly frontend code for mobile apps and web without changing your tech stack or workflows.',
+    Link: 'https://www.locofy.ai/',
+    Layer: 'Application',
+    Components: 'App Builder',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Documind',
+    Description: 'Transform your PDF documents into structured data with Documind.',
+    Link: 'https://www.documind.xyz/',
+    Layer: 'Data',
+    Components: 'Data Processing',
+    License: 'Open Source',
+  },
+  {
+    Name: 'Supabase',
+    Description:
+      'Supabase is an open-source Firebase alternative that provides a dedicated Postgres database to build web, mobile, and AI applications.',
+    Link: 'https://supabase.com/',
+    Layer: 'Data',
+    Components: 'Data Store, Vector Store',
+    License: 'Open Source',
+  },
+  {
+    Name: 'Docling',
+    Description:
+      'Docling parses documents and exports them to the desired format with ease and speed.',
+    Link: 'https://ds4sd.github.io/docling/',
+    Layer: 'Data',
+    Components: 'Data Processing',
+    License: 'Open Source',
+  },
+  {
+    Name: 'Observers',
+    Description:
+      'A lightweight library for AI observability. Support includes OpenAI-compliant LLMs, Docling, Hugging Face Datasets, DuckDB, and OpenTelemetry.',
+    Link: 'https://github.com/cfahlgren1/observers',
+    Layer: 'Observability',
+    Components: 'Logging',
+    License: 'Open Source',
   },
 ];
