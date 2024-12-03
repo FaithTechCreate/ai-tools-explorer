@@ -16,25 +16,47 @@ jobs:
           echo "Raw issue body:"
           echo "${{ github.event.issue.body }}"
 
-          # Parse the inputs from the form
-          NAME=$(echo "${{ github.event.issue.body }}" | grep -oP '(?<=### Name\n).*' || echo "[Your submission name]")
-          DESCRIPTION=$(echo "${{ github.event.issue.body }}" | grep -oP '(?<=### Description\n).*' || echo "[Your description]")
-          LINK=$(echo "${{ github.event.issue.body }}" | grep -oP '(?<=### Link\n).*' || echo "[Your link]")
-          LAYER=$(echo "${{ github.event.issue.body }}" | grep -oP '(?<=### Layer\n).*' || echo "[Selected layer]")
-          COMPONENTS=$(echo "${{ github.event.issue.body }}" | grep -oP '(?<=### Components\n).*' || echo "[Component categories]")
-          LICENSE=$(echo "${{ github.event.issue.body }}" | grep -oP '(?<=### License\n).*' || echo "[Selected license type]")
-          TYPE=$(echo "${{ github.event.issue.body }}" | grep -oP '(?<=### Type\n).*' || echo "[Selected type]")
-          USAGE=$(echo "${{ github.event.issue.body }}" | grep -oP '(?<=### Usage\n).*' || echo "[Usage description]")
+          # Parse the inputs from the form with defaults if extraction fails
+          NAME=$(echo "${{ github.event.issue.body }}" | sed -n '/### Name/{n;p}' | tr -d '\r' | xargs || echo "[Your submission name]")
+          DESCRIPTION=$(echo "${{ github.event.issue.body }}" | sed -n '/### Description/{n;p}' | tr -d '\r' | xargs || echo "[Your description]")
+          LINK=$(echo "${{ github.event.issue.body }}" | sed -n '/### Link/{n;p}' | tr -d '\r' | xargs || echo "[Your link]")
+          LAYER=$(echo "${{ github.event.issue.body }}" | sed -n '/### Layer/{n;p}' | tr -d '\r' | xargs || echo "[Selected layer]")
+          COMPONENTS=$(echo "${{ github.event.issue.body }}" | sed -n '/### Components/{n;p}' | tr -d '\r' | xargs || echo "[Component categories]")
+          LICENSE=$(echo "${{ github.event.issue.body }}" | sed -n '/### License/{n;p}' | tr -d '\r' | xargs || echo "[Selected license type]")
+          TYPE=$(echo "${{ github.event.issue.body }}" | sed -n '/### Type/{n;p}' | tr -d '\r' | xargs || echo "[Selected type]")
+          USAGE=$(echo "${{ github.event.issue.body }}" | sed -n '/### Usage/{n;p}' | tr -d '\r' | xargs || echo "[Usage description]")
 
-          # Output extracted values or defaults
-          echo "::set-output name=name::$NAME"
-          echo "::set-output name=description::$DESCRIPTION"
-          echo "::set-output name=link::$LINK"
-          echo "::set-output name=layer::$LAYER"
-          echo "::set-output name=components::$COMPONENTS"
-          echo "::set-output name=license::$LICENSE"
-          echo "::set-output name=type::$TYPE"
-          echo "::set-output name=usage::$USAGE"
+          # If extracted values are empty, use defaults
+          [ -z "$NAME" ] && NAME="[Your submission name]"
+          [ -z "$DESCRIPTION" ] && DESCRIPTION="[Your description]"
+          [ -z "$LINK" ] && LINK="[Your link]"
+          [ -z "$LAYER" ] && LAYER="[Selected layer]"
+          [ -z "$COMPONENTS" ] && COMPONENTS="[Component categories]"
+          [ -z "$LICENSE" ] && LICENSE="[Selected license type]"
+          [ -z "$TYPE" ] && TYPE="[Selected type]"
+          [ -z "$USAGE" ] && USAGE="[Usage description]"
+
+          # Debug output
+          echo "Extracted NAME: $NAME"
+          echo "Extracted DESCRIPTION: $DESCRIPTION"
+          echo "Extracted LINK: $LINK"
+          echo "Extracted LAYER: $LAYER"
+          echo "Extracted COMPONENTS: $COMPONENTS"
+          echo "Extracted LICENSE: $LICENSE"
+          echo "Extracted TYPE: $TYPE"
+          echo "Extracted USAGE: $USAGE"
+
+          # Output extracted values using GITHUB_OUTPUT
+          {
+            echo "name=$NAME"
+            echo "description=$DESCRIPTION"
+            echo "link=$LINK"
+            echo "layer=$LAYER"
+            echo "components=$COMPONENTS"
+            echo "license=$LICENSE"
+            echo "type=$TYPE"
+            echo "usage=$USAGE"
+          } >> $GITHUB_OUTPUT
 
       - name: Add Tech Stack PR Template Comment
         if: contains(github.event.issue.labels.*.name, 'tech-stack')
