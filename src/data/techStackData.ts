@@ -298,10 +298,10 @@ export const techStackData: TechStack[] = [
   {
     Name: 'Databricks',
     Description:
-      'Databricks is a unified data analytics platform, powered by Apache Spark, that accelerates innovation by unifying data science, engineering, and business.',
+      'Databricks is a unified, open analytics platform that enables data engineers, data scientists, and data analysts to process and transform large-scale data sets, build machine learning models, and perform data engineering tasks.',
     Link: 'https://databricks.com/',
     Layer: 'Data',
-    Components: 'Data Store',
+    Components: 'Data Processing, Data Store, Notebooks',
     License: 'Proprietary',
   },
   {
@@ -987,8 +987,8 @@ export const techStackData: TechStack[] = [
     Description:
       'Visual Studio Code is a free source-code editor made by Microsoft for Windows, Linux, and macOS, featuring support for debugging, syntax highlighting, and version control.',
     Link: 'https://code.visualstudio.com/',
-    Layer: 'Model',
-    Components: 'Notebooks',
+    Layer: 'Application',
+    Components: 'IDE',
     License: 'Open Source',
   },
   {
