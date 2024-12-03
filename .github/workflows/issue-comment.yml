@@ -9,38 +9,48 @@ jobs:
     permissions:
       issues: write
     steps:
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Debug Event Payload
+        run: echo "${{ toJson(github.event) }}"
+
       - name: Extract form data
         id: form
         run: |
-          # Convert the markdown form to JSON
-          JSON_DATA=$(echo '${{ github.event.issue.body }}' | jq -R -s 'split("### ")[1:] | map(
-            select(length > 0) |
-            capture("(?<key>[^\n]+)\n*(?<value>.*)")
-          ) | from_entries')
+          # Extract the issue body
+          echo "Raw issue body:"
+          echo "${{ github.event.issue.body }}"
 
-          # Extract values with defaults using jq
-          NAME=$(echo $JSON_DATA | jq -r '.Name // "[Your submission name]"' | tr -d '\n')
-          DESCRIPTION=$(echo $JSON_DATA | jq -r '.Description // "[Your description]"' | tr -d '\n')
-          LINK=$(echo $JSON_DATA | jq -r '.Link // "[Your link]"' | tr -d '\n')
-          LAYER=$(echo $JSON_DATA | jq -r '.Layer // "[Selected layer]"' | tr -d '\n')
-          COMPONENTS=$(echo $JSON_DATA | jq -r '.Components // "[Component categories]"' | tr -d '\n')
-          LICENSE=$(echo $JSON_DATA | jq -r '.License // "[Selected license type]"' | tr -d '\n')
-          TYPE=$(echo $JSON_DATA | jq -r '.Type // "[Selected type]"' | tr -d '\n')
-          USAGE=$(echo $JSON_DATA | jq -r '.Usage // "[Usage description]"' | tr -d '\n')
+          # Parse the inputs from the form with defaults if extraction fails
+          NAME=$(echo "${{ github.event.issue.body }}" | awk '/### Name/{getline; while(getline && $0 !~ /^###/){if($0 !~ /^[[:space:]]*$/){print $0; exit}}}' || echo "[Your submission name]")
+          DESCRIPTION=$(echo "${{ github.event.issue.body }}" | awk '/### Description/{getline; while(getline && $0 !~ /^###/){if($0 !~ /^[[:space:]]*$/){print $0; exit}}}' || echo "[Your description]")
+          LINK=$(echo "${{ github.event.issue.body }}" | awk '/### Link/{getline; while(getline && $0 !~ /^###/){if($0 !~ /^[[:space:]]*$/){print $0; exit}}}' || echo "[Your link]")
+          LAYER=$(echo "${{ github.event.issue.body }}" | awk '/### Layer/{getline; while(getline && $0 !~ /^###/){if($0 !~ /^[[:space:]]*$/){print $0; exit}}}' || echo "[Selected layer]")
+          COMPONENTS=$(echo "${{ github.event.issue.body }}" | awk '/### Components/{getline; while(getline && $0 !~ /^###/){if($0 !~ /^[[:space:]]*$/){print $0; exit}}}' || echo "[Component categories]")
+          LICENSE=$(echo "${{ github.event.issue.body }}" | awk '/### License/{getline; while(getline && $0 !~ /^###/){if($0 !~ /^[[:space:]]*$/){print $0; exit}}}' || echo "[Selected license type]")
+          TYPE=$(echo "${{ github.event.issue.body }}" | awk '/### Type/{getline; while(getline && $0 !~ /^###/){if($0 !~ /^[[:space:]]*$/){print $0; exit}}}' || echo "[Selected type]")
+          USAGE=$(echo "${{ github.event.issue.body }}" | awk '/### Usage/{getline; while(getline && $0 !~ /^###/){if($0 !~ /^[[:space:]]*$/){print $0; exit}}}' || echo "[Usage description]")
+
+          # If extracted values are empty, use defaults
+          [ -z "$NAME" ] && NAME="[Your submission name]"
+          [ -z "$DESCRIPTION" ] && DESCRIPTION="[Your description]"
+          [ -z "$LINK" ] && LINK="[Your link]"
+          [ -z "$LAYER" ] && LAYER="[Selected layer]"
+          [ -z "$COMPONENTS" ] && COMPONENTS="[Component categories]"
+          [ -z "$LICENSE" ] && LICENSE="[Selected license type]"
+          [ -z "$TYPE" ] && TYPE="[Selected type]"
+          [ -z "$USAGE" ] && USAGE="[Usage description]"
 
           # Debug output
-          echo "JSON Data:"
-          echo "$JSON_DATA" | jq '.'
-          echo 
-          echo "Extracted values:"
-          echo "NAME: $NAME"
-          echo "DESCRIPTION: $DESCRIPTION"
-          echo "LINK: $LINK"
-          echo "LAYER: $LAYER"
-          echo "COMPONENTS: $COMPONENTS"
-          echo "LICENSE: $LICENSE"
-          echo "TYPE: $TYPE"
-          echo "USAGE: $USAGE"
+          echo "Extracted NAME: $NAME"
+          echo "Extracted DESCRIPTION: $DESCRIPTION"
+          echo "Extracted LINK: $LINK"
+          echo "Extracted LAYER: $LAYER"
+          echo "Extracted COMPONENTS: $COMPONENTS"
+          echo "Extracted LICENSE: $LICENSE"
+          echo "Extracted TYPE: $TYPE"
+          echo "Extracted USAGE: $USAGE"
 
           # Output extracted values using GITHUB_OUTPUT
           {
@@ -76,34 +86,6 @@ jobs:
             To submit:
             1. Fork the repository
             2. Add your entry to the end of the array in `src/data/techStackData.ts`
-            3. Create a pull request
-
-            Make sure to:
-            - Match the exact format of existing entries
-            - Include a comment in your PR linking back to this issue
-
-      - name: Add Model PR Template Comment
-        if: contains(github.event.issue.labels.*.name, 'model')
-        uses: peter-evans/create-or-update-comment@v3
-        with:
-          issue-number: ${{ github.event.issue.number }}
-          body: |
-            Thanks for submitting a new model! Here's a template for the PR that you or anyone else can submit to add this to `modelsData.ts`:
-
-            ```typescript
-            {
-              Name: '${{ steps.form.outputs.name }}',
-              Description: '${{ steps.form.outputs.description }}',
-              Link: '${{ steps.form.outputs.link }}',
-              Type: '${{ steps.form.outputs.type }}',
-              Usage: '${{ steps.form.outputs.usage }}',
-              License: '${{ steps.form.outputs.license }}',
-            },
-            ```
-
-            To submit:
-            1. Fork the repository
-            2. Add your entry to the end of the array in `src/data/modelsData.ts`
             3. Create a pull request
 
             Make sure to:
