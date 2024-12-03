@@ -9,6 +9,12 @@ jobs:
     permissions:
       issues: write
     steps:
+      - uses: actions/checkout@v2
+      - uses: actions-ecosystem/action-parse-wiki-form@v1
+        id: form
+        with:
+          body: ${{ github.event.issue.body }}
+
       - name: Add Tech Stack PR Template Comment
         if: contains(github.event.issue.labels.*.name, 'tech-stack')
         uses: peter-evans/create-or-update-comment@v3
@@ -19,12 +25,12 @@ jobs:
 
             ```typescript
             {
-              Name: '[Your submission name]',
-              Description: '[Your description]',
-              Link: '[Your link]',
-              Layer: '[Selected layer]',
-              Components: '[Component categories]',
-              License: '[Selected license]',
+              Name: '${{ steps.form.outputs.name }}',
+              Description: '${{ steps.form.outputs.description }}',
+              Link: '${{ steps.form.outputs.link }}',
+              Layer: '${{ steps.form.outputs.layer }}',
+              Components: '${{ steps.form.outputs.components }}',
+              License: '${{ steps.form.outputs.license }}',
             },
             ```
 
@@ -34,7 +40,6 @@ jobs:
             3. Create a pull request
 
             Make sure to:
-            - Match the exact format of existing entries
             - Include a comment in your PR linking back to this issue
 
       - name: Add Model PR Template Comment
@@ -47,12 +52,12 @@ jobs:
 
             ```typescript
             {
-              Name: '[Your submission name]',
-              Description: '[Your description]',
-              Link: '[Your link]',
-              Type: '[Selected type]',
-              Usage: '[Usage description]',
-              License: '[Selected license]',
+              Name: '${{ steps.form.outputs.name }}',
+              Description: '${{ steps.form.outputs.description }}',
+              Link: '${{ steps.form.outputs.link }}',
+              Type: '${{ steps.form.outputs.type }}',
+              Usage: '${{ steps.form.outputs.usage }}',
+              License: '${{ steps.form.outputs.license }}',
             },
             ```
 
@@ -62,5 +67,4 @@ jobs:
             3. Create a pull request
 
             Make sure to:
-            - Match the exact format of existing entries
             - Include a comment in your PR linking back to this issue
