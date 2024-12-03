@@ -9,11 +9,32 @@ jobs:
     permissions:
       issues: write
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions-ecosystem/action-parse-wiki-form@v1
+      - name: Extract form data
         id: form
-        with:
-          body: ${{ github.event.issue.body }}
+        run: |
+          # Extract the issue body
+          echo "Raw issue body:"
+          echo "${{ github.event.issue.body }}"
+
+          # Parse the inputs from the form
+          NAME=$(echo "${{ github.event.issue.body }}" | grep -oP '(?<=### Name\n).*' || echo "[Your submission name]")
+          DESCRIPTION=$(echo "${{ github.event.issue.body }}" | grep -oP '(?<=### Description\n).*' || echo "[Your description]")
+          LINK=$(echo "${{ github.event.issue.body }}" | grep -oP '(?<=### Link\n).*' || echo "[Your link]")
+          LAYER=$(echo "${{ github.event.issue.body }}" | grep -oP '(?<=### Layer\n).*' || echo "[Selected layer]")
+          COMPONENTS=$(echo "${{ github.event.issue.body }}" | grep -oP '(?<=### Components\n).*' || echo "[Component categories]")
+          LICENSE=$(echo "${{ github.event.issue.body }}" | grep -oP '(?<=### License\n).*' || echo "[Selected license type]")
+          TYPE=$(echo "${{ github.event.issue.body }}" | grep -oP '(?<=### Type\n).*' || echo "[Selected type]")
+          USAGE=$(echo "${{ github.event.issue.body }}" | grep -oP '(?<=### Usage\n).*' || echo "[Usage description]")
+
+          # Output extracted values or defaults
+          echo "::set-output name=name::$NAME"
+          echo "::set-output name=description::$DESCRIPTION"
+          echo "::set-output name=link::$LINK"
+          echo "::set-output name=layer::$LAYER"
+          echo "::set-output name=components::$COMPONENTS"
+          echo "::set-output name=license::$LICENSE"
+          echo "::set-output name=type::$TYPE"
+          echo "::set-output name=usage::$USAGE"
 
       - name: Add Tech Stack PR Template Comment
         if: contains(github.event.issue.labels.*.name, 'tech-stack')
@@ -40,6 +61,7 @@ jobs:
             3. Create a pull request
 
             Make sure to:
+            - Match the exact format of existing entries
             - Include a comment in your PR linking back to this issue
 
       - name: Add Model PR Template Comment
@@ -67,4 +89,5 @@ jobs:
             3. Create a pull request
 
             Make sure to:
+            - Match the exact format of existing entries
             - Include a comment in your PR linking back to this issue
