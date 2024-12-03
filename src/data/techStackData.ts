@@ -605,21 +605,12 @@ export const techStackData: TechStack[] = [
     License: 'Proprietary',
   },
   {
-    Name: 'OpenAI',
+    Name: 'OpenAI Developer Platform',
     Description:
-      'OpenAI is an AI research and deployment company aiming to ensure that artificial general intelligence benefits all of humanity.',
-    Link: 'https://openai.com/',
-    Layer: 'Infrastructure',
-    Components: 'Model Serving',
-    License: 'Proprietary',
-  },
-  {
-    Name: 'Anthropic',
-    Description:
-      'Anthropic is an AI safety and research company working to build reliable, interpretable, and steerable AI systems.',
-    Link: 'https://www.anthropic.com/',
-    Layer: 'Infrastructure',
-    Components: 'Model Serving',
+      'Suite of tools and resources provided by OpenAI to help developers build and integrate AI models into their applications.',
+    Link: 'https://platform.openai.com/',
+    Layer: 'Model',
+    Components: 'Fine-Tuning, Model Serving, Playground',
     License: 'Proprietary',
   },
   {
@@ -1010,15 +1001,6 @@ export const techStackData: TechStack[] = [
     License: 'Open Source',
   },
   {
-    Name: 'OpenAI Playground',
-    Description:
-      "OpenAI Playground is an interactive web interface that allows users to experiment with OpenAI's language models.",
-    Link: 'https://platform.openai.com/playground',
-    Layer: 'Model',
-    Components: 'Playground',
-    License: 'Proprietary',
-  },
-  {
     Name: 'Stable Diffusion web UI',
     Description: 'Stable Diffusion web UI',
     Link: 'https://github.com/AUTOMATIC1111/stable-diffusion-webui',
@@ -1405,7 +1387,7 @@ export const techStackData: TechStack[] = [
       'La Plateforme enables developers and enterprises to build new products and applications, powered by Mistral’s open source and commercial LLMs.',
     Link: 'https://console.mistral.ai/',
     Layer: 'Model',
-    Components: 'Playground',
+    Components: 'Model Serving, Playground',
     License: 'Proprietary',
   },
   {
@@ -1414,16 +1396,16 @@ export const techStackData: TechStack[] = [
       'Google AI Studio is a browser-based IDE for prototyping with generative models. Google AI Studio lets you quickly try out models and experiment with different prompts.',
     Link: 'https://aistudio.google.com/',
     Layer: 'Model',
-    Components: 'Playground',
+    Components: 'Fine-Tuning, Playground',
     License: 'Proprietary',
   },
   {
-    Name: 'Anthropic Console',
+    Name: 'Anthropic API',
     Description:
-      'Developer interface for Claude for crafting and testing powerful prompts directly in your browser.',
-    Link: 'https://console.anthropic.com',
+      'Provides API access and SDKs to integrate Claude models into your application. Use the Anthropic Console to craft and test powerful prompts directly in your browser.',
+    Link: 'https://docs.anthropic.com/',
     Layer: 'Model',
-    Components: 'Playground',
+    Components: 'Model Serving, Playground',
     License: 'Proprietary',
   },
   {
@@ -1431,7 +1413,7 @@ export const techStackData: TechStack[] = [
     Description: 'API access to the latest DeepSeek models',
     Link: 'https://platform.deepseek.com/',
     Layer: 'Model',
-    Components: 'Playground',
+    Components: 'Model Serving, Playground',
     License: 'Proprietary',
   },
   {
@@ -1445,7 +1427,8 @@ export const techStackData: TechStack[] = [
   },
   {
     Name: 'ChatGPT',
-    Description: 'ChatGPT can help with writing, learning, brainstorming, coding, and more.',
+    Description:
+      'ChatGPT is an AI-powered chatbot developed by OpenAI that can help with writing, learning, brainstorming, coding, and more.',
     Link: 'https://chatgpt.com/',
     Layer: 'Application',
     Components: 'Coding Assistant, Content Creation',
@@ -1463,7 +1446,7 @@ export const techStackData: TechStack[] = [
   {
     Name: 'Claude',
     Description:
-      'Claude is a highly performant, trustworthy, and intelligent AI platform built by Anthropic. Claude excels at tasks involving language, reasoning, analysis, coding, and more.',
+      'Chat interface to Anthropic Claude models. Claude excels at tasks involving language, reasoning, analysis, coding, and more.',
     Link: 'http://www.claude.ai/',
     Layer: 'Application',
     Components: 'Coding Assistant, Content Creation',
