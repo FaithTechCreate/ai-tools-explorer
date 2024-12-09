@@ -224,4 +224,20 @@ export const modelsData: Model[] = [
     Usage: 'Text generation, language understanding, code generation',
     License: 'Proprietary',
   },
+  {
+    Name: "Amazon Nova Pro",
+    Description: "Amazon Nova Pro is a highly capable multimodal model with the best combination of accuracy, speed, and cost for a wide range of tasks.  It is part of the Amazon Nova series of state-of-the-art foundation available exclusively on Amazon Bedrock.",
+    Link: "https://aws.amazon.com/ai/generative-ai/nova/",
+    Type: "Large Language Model",
+    Usage: "Text generation, language understanding, code generation",
+    License: "Proprietary"
+  },
+  {
+    Name: "DeepSeek v2.5",
+    Description: "A strong, economical, and efficient mixture-of-experts language model.",
+    Link: "https://huggingface.co/deepseek-ai/DeepSeek-V2.5",
+    Type: "Large Language Model",
+    Usage: "Text generation, language understanding, code generation",
+    License: "Open-ish"
+  },
 ];

@@ -102,7 +102,7 @@ jobs:
               Type: "${{ steps.form.outputs.type }}",
               Usage: "${{ steps.form.outputs.usage }}",
               License: "${{ steps.form.outputs.license }}"
-            }
+            },
             ```
 
             To submit:
