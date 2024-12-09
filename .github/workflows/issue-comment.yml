@@ -85,3 +85,31 @@ jobs:
             Make sure to:
             - Match the exact format of existing entries
             - Include a comment in your PR linking back to this issue
+
+      - name: Add Model PR Template Comment
+        if: contains(github.event.issue.labels.*.name, 'model')
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Thanks for submitting a new model! Here's a template for the PR that you or anyone else can submit to add this to `modelsData.ts`:
+
+            ```typescript
+            {
+              Name: "${{ steps.form.outputs.name }}",
+              Description: "${{ steps.form.outputs.description }}",
+              Link: "${{ steps.form.outputs.link }}",
+              Type: "${{ steps.form.outputs.type }}",
+              Usage: "${{ steps.form.outputs.usage }}",
+              License: "${{ steps.form.outputs.license }}"
+            }
+            ```
+
+            To submit:
+            1. Fork the repository
+            2. Add your entry to the end of the array in `src/data/modelsData.ts`
+            3. Create a pull request
+
+            Make sure to:
+            - Match the exact format of existing entries
+            - Include a comment in your PR linking back to this issue
