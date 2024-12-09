@@ -1556,4 +1556,22 @@ export const techStackData: TechStack[] = [
     Components: 'Logging',
     License: 'Open Source',
   },
+  {
+    Name: 'LangSmith',
+    Description:
+      'LangSmith is a platform for building production-grade LLM applications. It allows you to closely monitor and evaluate your application, so you can ship quickly and with confidence.',
+    Link: 'https://docs.smith.langchain.com/',
+    Layer: 'Observability',
+    Components: 'Monitoring',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'LangGraph',
+    Description:
+      'LangGraph is a library for building stateful, multi-actor applications with LLMs, used to create agent and multi-agent workflows.',
+    Link: 'https://langchain-ai.github.io/langgraph/',
+    Layer: 'Application',
+    Components: 'Orchestration',
+    License: 'Open Source',
+  },
 ];
