@@ -128,16 +128,16 @@ export const modelsData: Model[] = [
     License: 'Open Source',
   },
   {
-    Name: 'LLaMa 3.2',
+    Name: 'Meta LLaMa 3.2',
     Description:
-      "LLaMa 3.2 is Meta's latest open-source large language model, offering advanced capabilities in natural language understanding and generation.",
+      "LLaMa 3.2 is Meta's previous open-source large language model, offering advanced capabilities in natural language understanding and generation.",
     Link: 'https://huggingface.co/collections/meta-llama/llama-32-66f448ffc8c32f949b04c8cf',
     Type: 'Large Language Model',
     Usage: 'Text generation, language understanding, code generation',
     License: 'Open-ish',
   },
   {
-    Name: 'LLaMa 3.1',
+    Name: 'Meta LLaMa 3.1',
     Description:
       "LLaMa 3.1 is an earlier version of Meta's open-source large language model, providing robust natural language processing capabilities.",
     Link: 'https://huggingface.co/collections/meta-llama/llama-31-669fc079a0c406a149a5738f',
@@ -225,19 +225,46 @@ export const modelsData: Model[] = [
     License: 'Proprietary',
   },
   {
-    Name: "Amazon Nova Pro",
-    Description: "Amazon Nova Pro is a highly capable multimodal model with the best combination of accuracy, speed, and cost for a wide range of tasks.  It is part of the Amazon Nova series of state-of-the-art foundation available exclusively on Amazon Bedrock.",
-    Link: "https://aws.amazon.com/ai/generative-ai/nova/",
-    Type: "Large Language Model",
-    Usage: "Text generation, language understanding, code generation",
-    License: "Proprietary"
+    Name: 'Amazon Nova Pro',
+    Description:
+      'Amazon Nova Pro is a highly capable multimodal model with the best combination of accuracy, speed, and cost for a wide range of tasks.  It is part of the Amazon Nova series of state-of-the-art foundation available exclusively on Amazon Bedrock.',
+    Link: 'https://aws.amazon.com/ai/generative-ai/nova/',
+    Type: 'Large Language Model',
+    Usage: 'Text generation, language understanding, code generation',
+    License: 'Proprietary',
   },
   {
-    Name: "DeepSeek v2.5",
-    Description: "A strong, economical, and efficient mixture-of-experts language model.",
-    Link: "https://huggingface.co/deepseek-ai/DeepSeek-V2.5",
-    Type: "Large Language Model",
-    Usage: "Text generation, language understanding, code generation",
-    License: "Open-ish"
+    Name: 'DeepSeek v2.5',
+    Description: 'A strong, economical, and efficient mixture-of-experts language model.',
+    Link: 'https://huggingface.co/deepseek-ai/DeepSeek-V2.5',
+    Type: 'Large Language Model',
+    Usage: 'Text generation, language understanding, code generation',
+    License: 'Open-ish',
+  },
+  {
+    Name: 'OpenAI o1',
+    Description: 'o1 is a reasoning model for solving hard problems.',
+    Link: 'https://openai.com/o1/',
+    Type: 'Large Language Model',
+    Usage: 'Text generation, language understanding, code generation',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Meta LLaMa 3.3',
+    Description:
+      'LLaMa 3.3 is a pretrained and instruction tuned generative model in 70B (text in/text out). It delivers similar performance to LLaMa 3.1 405B with cost effective inference.',
+    Link: 'https://huggingface.co/collections/meta-llama/llama-33-67531d5c405ec5d08a852000',
+    Type: 'Large Language Model',
+    Usage: 'Text generation, language understanding, code generation',
+    License: 'Open-ish',
+  },
+  {
+    Name: 'Tencent HunyuanVideo',
+    Description:
+      'HunyuanVideo is a novel open-source video foundation model that exhibits performance in video generation that is comparable to, if not superior to, leading closed-source models.',
+    Link: 'https://huggingface.co/tencent/HunyuanVideo',
+    Type: 'Text-to-Video Generation',
+    Usage: 'Creating videos from text descriptions',
+    License: 'Open-ish',
   },
 ];

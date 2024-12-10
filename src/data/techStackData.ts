@@ -121,7 +121,7 @@ export const techStackData: TechStack[] = [
     Description: 'A cloud platform for static sites and Serverless Functions.',
     Link: 'https://replit.com/',
     Layer: 'Application',
-    Components: 'Hosting, IDE',
+    Components: 'Coding Assistant, Hosting, IDE',
     License: 'Proprietary',
   },
   {
@@ -978,8 +978,8 @@ export const techStackData: TechStack[] = [
     Description:
       'PyCharm is an integrated development environment (IDE) used for programming in Python, providing code analysis, a graphical debugger, and an integrated unit tester.',
     Link: 'https://www.jetbrains.com/pycharm/',
-    Layer: 'Model',
-    Components: 'Notebooks',
+    Layer: 'Application',
+    Components: 'IDE',
     License: 'Open Source',
   },
   {
@@ -1572,6 +1572,69 @@ export const techStackData: TechStack[] = [
     Link: 'https://langchain-ai.github.io/langgraph/',
     Layer: 'Application',
     Components: 'Orchestration',
+    License: 'Open Source',
+  },
+  {
+    Name: 'Leonardo.Ai',
+    Description:
+      'Leonardo.Ai offers a vast array of tools and models for developers and users, allowing them to generate images, animations, and 3D models.',
+    Link: 'https://leonardo.ai/',
+    Layer: 'Application',
+    Components: 'Content Creation',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Zencoder',
+    Description:
+      'Zencoder is an AI coding agent platform that empowers developers to ship products faster.',
+    Link: 'https://zencoder.ai/',
+    Layer: 'Application',
+    Components: 'Coding Assistant',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Sourcegraph',
+    Description:
+      'Sourcegraph helps developers search, understand, and write code in complex codebases using code search and context-aware AI.',
+    Link: 'https://sourcegraph.com/',
+    Layer: 'Application',
+    Components: 'Coding Assistant',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Webstorm',
+    Description:
+      'Webstorm is an integrated development environment (IDE) used for web development with a focus on JavaScript, TypeScript, and related technologies.',
+    Link: 'https://www.jetbrains.com/webstorm/',
+    Layer: 'Application',
+    Components: 'Coding Assistant, IDE',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'JetBrains Fleet',
+    Description:
+      'Fleet is a code editor designed for simplicity, combining a clean UI, AI capabilities, and an essential set of built-in features for most major languages.',
+    Link: 'https://www.jetbrains.com/fleet/',
+    Layer: 'Application',
+    Components: 'Coding Assistant, IDE',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Maxim',
+    Description:
+      'Maxim is an end-to-end AI evaluation and observability platform, empowering modern AI teams to ship products with quality, reliability, and speed.',
+    Link: 'https://www.getmaxim.ai/',
+    Layer: 'Model',
+    Components: 'Experiment Tracking, Monitoring, Prompt Management',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Turso',
+    Description:
+      'SQLite for production that is powered by libSQL and includes native vector search for AI applications.',
+    Link: 'https://turso.tech/',
+    Layer: 'Data',
+    Components: 'Data Store, Vector Store',
     License: 'Open Source',
   },
 ];
