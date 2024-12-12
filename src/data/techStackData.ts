@@ -121,7 +121,7 @@ export const techStackData: TechStack[] = [
     Description: 'A cloud platform for static sites and Serverless Functions.',
     Link: 'https://replit.com/',
     Layer: 'Application',
-    Components: 'Coding Assistant, Hosting, IDE',
+    Components: 'App Builder, Coding Assistant, Hosting, IDE',
     License: 'Proprietary',
   },
   {
@@ -1636,5 +1636,101 @@ export const techStackData: TechStack[] = [
     Layer: 'Data',
     Components: 'Data Store, Vector Store',
     License: 'Open Source',
+  },
+  {
+    Name: 'Comet',
+    Description:
+      'Comet provides an end-to-end model evaluation platform for AI developers, with best in class LLM evaluations, experiment tracking, and production monitoring.',
+    Link: 'https://www.comet.com/',
+    Layer: 'Model',
+    Components: 'Experiment Tracking, Model Registry, Monitoring',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'fal',
+    Description:
+      'fal.ai is a generative media platform designed for developers, offering high-performance AI model inference and training capabilities. The platform specializes in running diffusion models with production-ready APIs and interactive UI playgrounds.',
+    Link: 'https://fal.ai/',
+    Layer: 'Infrastructure',
+    Components: 'Model Serving, Model Training',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Fireworks AI',
+    Description:
+      'The fastest and most efficient inference engine to build production-ready, compound AI systems.',
+    Link: 'https://fireworks.ai/',
+    Layer: 'Infrastructure',
+    Components: 'Model Serving, Model Training',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Roboflow',
+    Description:
+      'Everything you need to build and deploy computer vision applications, including datasets, pre-trained models, AI-assisted data annotation, and a low-code interface for building applications.',
+    Link: 'https://roboflow.com/',
+    Layer: 'Model',
+    Components: 'Data Processing, Model Serving, Model Training',
+    License: 'Open Source',
+  },
+  {
+    Name: 'CoreWeave',
+    Description:
+      'CoreWeave is a cloud provider that offers a range of services, including compute, storage, and networking, optimized for AI applications.',
+    Link: 'https://www.coreweave.com/',
+    Layer: 'Infrastructure',
+    Components: 'Compute',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Captions',
+    Description: 'Generate and edit talking videos with AI.',
+    Link: 'https://www.captions.ai/',
+    Layer: 'Application',
+    Components: 'Content Creation',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Synthesia',
+    Description: 'Create studio-quality videos with AI avatars and voiceovers.',
+    Link: 'https://www.synthesia.io/',
+    Layer: 'Application',
+    Components: 'Content Creation',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Devin',
+    Description:
+      'Devin is an AI software engineer from Cognition, an applied AI lab building end-to-end software agents.',
+    Link: 'https://www.cognition.ai/',
+    Layer: 'Application',
+    Components: 'Coding Assistant',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Foundry',
+    Description: 'Elastic compute for AI developers.',
+    Link: 'https://mlfoundry.com/',
+    Layer: 'Infrastructure',
+    Components: 'Compute',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Moondream',
+    Description:
+      'Moondream is a tiny open-source vision AI that brings powerful image understanding to your applications and runs everywhere. Provides an API for easy integration.',
+    Link: 'https://moondream.ai/',
+    Layer: 'Model',
+    Components: 'Model Serving, Playground',
+    License: 'Open Source',
+  },
+  {
+    Name: 'Cartesia',
+    Description:
+      'Cartesia provides API access to their state-of-the-art multilingual generative voice model, Sonic.',
+    Link: 'https://cartesia.ai/',
+    Layer: 'Model',
+    Components: 'Model Serving, Playground',
+    License: 'Proprietary',
   },
 ];
