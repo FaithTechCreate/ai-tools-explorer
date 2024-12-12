@@ -277,7 +277,7 @@ export const modelsData: Model[] = [
   },
   {
     Name: 'Google Gemini 2.0 Flash',
-    Description: 'An advanced multimodal model built for the agentic era.',
+    Description: 'An advanced multimodal model built for the agentic era. Supports multimodal inputs and native audio, image output.',
     Link: 'https://ai.google.dev/gemini-api/docs/models/gemini#gemini-2.0-flash',
     Type: 'Large Language Model',
     Usage: 'Text generation, language understanding, code generation',
