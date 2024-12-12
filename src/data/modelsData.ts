@@ -216,10 +216,10 @@ export const modelsData: Model[] = [
     License: 'Proprietary',
   },
   {
-    Name: 'Google Gemini',
+    Name: 'Google Gemini 1.5 Pro',
     Description:
-      "Google Gemini is Google's generative AI model, designed to compete with OpenAI's ChatGPT, offering enhanced speed and quality.",
-    Link: 'https://ai.google.dev/gemini-api/docs/models/gemini',
+      "Google's generative AI model, designed to compete with OpenAI's ChatGPT, offering enhanced speed and quality.",
+    Link: 'https://ai.google.dev/gemini-api/docs/models/gemini#gemini-1.5-pro',
     Type: 'Large Language Model',
     Usage: 'Text generation, language understanding, code generation',
     License: 'Proprietary',
@@ -266,5 +266,30 @@ export const modelsData: Model[] = [
     Type: 'Text-to-Video Generation',
     Usage: 'Creating videos from text descriptions',
     License: 'Open-ish',
+  },
+  {
+    Name: 'OpenAI Sora Turbo',
+    Description: 'Sora creates realistic videos from text.',
+    Link: 'https://sora.com/',
+    Type: 'Text-to-Video Generation',
+    Usage: 'Creating videos from text descriptions',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Google Gemini 2.0 Flash',
+    Description: 'An advanced multimodal model built for the agentic era.',
+    Link: 'https://ai.google.dev/gemini-api/docs/models/gemini#gemini-2.0-flash',
+    Type: 'Large Language Model',
+    Usage: 'Text generation, language understanding, code generation',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Moondream',
+    Description:
+      'Moondream provides tiny open-source vision-language models that bring powerful image understanding.',
+    Link: 'https://moondream.ai/',
+    Type: 'Vision-Language Model',
+    Usage: 'Image analysis, object detection, visual reasoning',
+    License: 'Open Source',
   },
 ];
