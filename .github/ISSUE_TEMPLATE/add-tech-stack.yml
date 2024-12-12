@@ -19,8 +19,7 @@ body:
     id: description
     attributes:
       label: Description
-      description: A brief (1-2 sentences) description of what the tool does
-      render: text
+      description: A brief (1-2 sentences) plain text description of what the tool does
     validations:
       required: true
 
