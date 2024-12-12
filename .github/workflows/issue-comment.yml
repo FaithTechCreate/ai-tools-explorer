@@ -18,7 +18,7 @@ jobs:
 
           # Parse the inputs from the form with defaults if extraction fails
           NAME=$(echo "${{ github.event.issue.body }}" | awk '/### Name/{getline; while(getline && $0 !~ /^###/){if($0 !~ /^[[:space:]]*$/){print $0; exit}}}' || echo "[Your submission name]")
-          DESCRIPTION=$(echo "${{ github.event.issue.body }}" | awk '/### Description/{getline; while(getline && $0 !~ /^###/){if($0 !~ /^[[:space:]]*$/){print $0; exit}}}' || echo "[Your description]")
+          DESCRIPTION=$(echo "${{ github.event.issue.body }}" | awk '/### Description/{getline; buffer=""; while(getline && $0 !~ /^###/){if($0 !~ /^[[:space:]]*$/){gsub(/"/, "\\\""); buffer = buffer " " $0}} print substr(buffer,2)}' | sed 's/\\/\\\\/g' || echo "[Your description]")
           LINK=$(echo "${{ github.event.issue.body }}" | awk '/### Link/{getline; while(getline && $0 !~ /^###/){if($0 !~ /^[[:space:]]*$/){print $0; exit}}}' || echo "[Your link]")
           LAYER=$(echo "${{ github.event.issue.body }}" | awk '/### Layer/{getline; while(getline && $0 !~ /^###/){if($0 !~ /^[[:space:]]*$/){print $0; exit}}}' || echo "[Selected layer]")
           COMPONENTS=$(echo "${{ github.event.issue.body }}" | awk '/### Components/{getline; while(getline && $0 !~ /^###/){if($0 !~ /^[[:space:]]*$/){print $0; exit}}}' || echo "[Component categories]")

@@ -19,7 +19,8 @@ body:
     id: description
     attributes:
       label: Description
-      description: A brief description of the model and its capabilities
+      description: A brief (1-2 sentences) description of the model and its capabilities
+      render: text
     validations:
       required: true
 
