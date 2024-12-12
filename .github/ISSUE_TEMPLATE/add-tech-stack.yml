@@ -20,6 +20,7 @@ body:
     attributes:
       label: Description
       description: A brief (1-2 sentences) description of what the tool does
+      render: text
     validations:
       required: true
 
