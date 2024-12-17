@@ -96,7 +96,7 @@ export const modelsData: Model[] = [
     Description:
       'Google Gemma is a language model developed by Google, focusing on natural language understanding and generation tasks.',
     Link: 'https://ai.google.dev/gemma/docs',
-    Type: 'Large Language Model',
+    Type: 'Language Model',
     Usage: 'Text generation, instruction following',
     License: 'Open Source',
   },
@@ -105,7 +105,7 @@ export const modelsData: Model[] = [
     Description:
       'Microsoft Phi is a large-scale AI model developed by Microsoft, aimed at advancing natural language processing and understanding.',
     Link: 'https://huggingface.co/microsoft/Phi-3-mini-128k-instruct',
-    Type: 'Large Language Model',
+    Type: 'Language Model',
     Usage: 'Text generation, language understanding',
     License: 'Open Source',
   },
@@ -114,7 +114,7 @@ export const modelsData: Model[] = [
     Description:
       "IBM Granite 3.0 is IBM's AI model designed for enterprise applications, offering capabilities in natural language understanding and data analysis.",
     Link: 'https://huggingface.co/ibm-granite',
-    Type: 'Large Language Model',
+    Type: 'Language Model',
     Usage: 'Text generation, language understanding, code generation',
     License: 'Open Source',
   },
@@ -123,7 +123,7 @@ export const modelsData: Model[] = [
     Description:
       "Qwen 2.5 is Alibaba Cloud's large-scale language model, designed for various AI applications including natural language processing and understanding.",
     Link: 'https://github.com/QwenLM/Qwen',
-    Type: 'Large Language Model',
+    Type: 'Language Model',
     Usage: 'Text generation, language understanding',
     License: 'Open Source',
   },
@@ -132,7 +132,7 @@ export const modelsData: Model[] = [
     Description:
       "LLaMa 3.2 is Meta's previous open-source large language model, offering advanced capabilities in natural language understanding and generation.",
     Link: 'https://huggingface.co/collections/meta-llama/llama-32-66f448ffc8c32f949b04c8cf',
-    Type: 'Large Language Model',
+    Type: 'Language Model',
     Usage: 'Text generation, language understanding, code generation',
     License: 'Open-ish',
   },
@@ -141,7 +141,7 @@ export const modelsData: Model[] = [
     Description:
       "LLaMa 3.1 is an earlier version of Meta's open-source large language model, providing robust natural language processing capabilities.",
     Link: 'https://huggingface.co/collections/meta-llama/llama-31-669fc079a0c406a149a5738f',
-    Type: 'Large Language Model',
+    Type: 'Language Model',
     Usage: 'Text generation, language understanding, code generation',
     License: 'Open-ish',
   },
@@ -150,7 +150,7 @@ export const modelsData: Model[] = [
     Description:
       "Nemotron 70B Instruct is Nvidia's large-scale language model, optimized for instruction-following tasks and natural language understanding.",
     Link: 'https://huggingface.co/nvidia/Llama-3.1-Nemotron-70B-Instruct',
-    Type: 'Large Language Model',
+    Type: 'Language Model',
     Usage: 'Text generation, language understanding, code generation',
     License: 'Open-ish',
   },
@@ -159,7 +159,7 @@ export const modelsData: Model[] = [
     Description:
       'Mistral is a language model designed for efficient and scalable natural language processing tasks.',
     Link: 'https://mistral.ai/technology/',
-    Type: 'Large Language Model',
+    Type: 'Language Model',
     Usage: 'Text generation, language understanding',
     License: 'Open-ish',
   },
@@ -167,7 +167,7 @@ export const modelsData: Model[] = [
     Name: 'Pixtral 12B',
     Description: 'A 12B model with image understanding capabilities in addition to text.',
     Link: 'https://mistral.ai/news/pixtral-12b/',
-    Type: 'Large Language Model',
+    Type: 'Language Model',
     Usage: 'Text generation, language understanding',
     License: 'Open Source',
   },
@@ -175,7 +175,7 @@ export const modelsData: Model[] = [
     Name: 'Codestral',
     Description: 'Language model for coding',
     Link: 'https://huggingface.co/mistralai/Codestral-22B-v0.1',
-    Type: 'Large Language Model',
+    Type: 'Language Model',
     Usage: 'Text generation, language understanding',
     License: 'Open-ish',
   },
@@ -184,7 +184,7 @@ export const modelsData: Model[] = [
     Description:
       'Falcon is a state-of-the-art language model developed for advanced natural language understanding and generation.',
     Link: 'https://huggingface.co/tiiuae/falcon-40b',
-    Type: 'Large Language Model',
+    Type: 'Language Model',
     Usage: 'Text generation, language tasks',
     License: 'Open-ish',
   },
@@ -193,7 +193,7 @@ export const modelsData: Model[] = [
     Description:
       'Pythia is a suite of large language models developed for research in natural language processing.',
     Link: 'https://huggingface.co/EleutherAI/pythia-12b',
-    Type: 'Large Language Model',
+    Type: 'Language Model',
     Usage: 'Text generation, language tasks',
     License: 'Open-ish',
   },
@@ -202,7 +202,7 @@ export const modelsData: Model[] = [
     Description:
       "GPT-4o is OpenAI's cost-efficient small AI model, designed to make AI technology more affordable and less energy-intensive.",
     Link: 'https://platform.openai.com/docs/models#gpt-4o',
-    Type: 'Large Language Model',
+    Type: 'Language Model',
     Usage: 'Text generation, language understanding, code generation',
     License: 'Proprietary',
   },
@@ -211,7 +211,7 @@ export const modelsData: Model[] = [
     Description:
       "Claude Sonnet 3.5 is Anthropic's advanced AI model, offering enhanced natural language understanding and generation capabilities.",
     Link: 'https://www.anthropic.com/claude/sonnet',
-    Type: 'Large Language Model',
+    Type: 'Language Model',
     Usage: 'Text generation, language understanding, code generation',
     License: 'Proprietary',
   },
@@ -220,7 +220,7 @@ export const modelsData: Model[] = [
     Description:
       "Google's generative AI model, designed to compete with OpenAI's ChatGPT, offering enhanced speed and quality.",
     Link: 'https://ai.google.dev/gemini-api/docs/models/gemini#gemini-1.5-pro',
-    Type: 'Large Language Model',
+    Type: 'Language Model',
     Usage: 'Text generation, language understanding, code generation',
     License: 'Proprietary',
   },
@@ -229,7 +229,7 @@ export const modelsData: Model[] = [
     Description:
       'Amazon Nova Pro is a highly capable multimodal model with the best combination of accuracy, speed, and cost for a wide range of tasks.  It is part of the Amazon Nova series of state-of-the-art foundation available exclusively on Amazon Bedrock.',
     Link: 'https://aws.amazon.com/ai/generative-ai/nova/',
-    Type: 'Large Language Model',
+    Type: 'Language Model',
     Usage: 'Text generation, language understanding, code generation',
     License: 'Proprietary',
   },
@@ -237,7 +237,7 @@ export const modelsData: Model[] = [
     Name: 'DeepSeek v2.5',
     Description: 'A strong, economical, and efficient mixture-of-experts language model.',
     Link: 'https://huggingface.co/deepseek-ai/DeepSeek-V2.5',
-    Type: 'Large Language Model',
+    Type: 'Language Model',
     Usage: 'Text generation, language understanding, code generation',
     License: 'Open-ish',
   },
@@ -245,7 +245,7 @@ export const modelsData: Model[] = [
     Name: 'OpenAI o1',
     Description: 'o1 is a reasoning model for solving hard problems.',
     Link: 'https://openai.com/o1/',
-    Type: 'Large Language Model',
+    Type: 'Language Model',
     Usage: 'Text generation, language understanding, code generation',
     License: 'Proprietary',
   },
@@ -254,7 +254,7 @@ export const modelsData: Model[] = [
     Description:
       'LLaMa 3.3 is a pretrained and instruction tuned generative model in 70B (text in/text out). It delivers similar performance to LLaMa 3.1 405B with cost effective inference.',
     Link: 'https://huggingface.co/collections/meta-llama/llama-33-67531d5c405ec5d08a852000',
-    Type: 'Large Language Model',
+    Type: 'Language Model',
     Usage: 'Text generation, language understanding, code generation',
     License: 'Open-ish',
   },
@@ -277,9 +277,10 @@ export const modelsData: Model[] = [
   },
   {
     Name: 'Google Gemini 2.0 Flash',
-    Description: 'An advanced multimodal model built for the agentic era. Supports multimodal inputs and native audio, image output.',
+    Description:
+      'An advanced multimodal model built for the agentic era. Supports multimodal inputs and native audio, image output.',
     Link: 'https://ai.google.dev/gemini-api/docs/models/gemini#gemini-2.0-flash',
-    Type: 'Large Language Model',
+    Type: 'Language Model',
     Usage: 'Text generation, language understanding, code generation',
     License: 'Proprietary',
   },
@@ -290,6 +291,15 @@ export const modelsData: Model[] = [
     Link: 'https://moondream.ai/',
     Type: 'Vision-Language Model',
     Usage: 'Image analysis, object detection, visual reasoning',
+    License: 'Open Source',
+  },
+  {
+    Name: 'OlMo 2',
+    Description:
+      'OLMo 2 is a family of fully-open language models, developed start-to-finish with open and accessible training data, open-source training code, reproducible training recipes, transparent evaluations, intermediate checkpoints, and more.',
+    Link: 'https://allenai.org/olmo',
+    Type: 'Language Model',
+    Usage: 'Text generation, language understanding',
     License: 'Open Source',
   },
 ];
