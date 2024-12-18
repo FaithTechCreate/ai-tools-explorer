@@ -1939,4 +1939,13 @@ export const techStackData: TechStack[] = [
     Components: 'Evaluation, Leaderboard',
     License: 'Open Source',
   },
+  {
+    Name: 'Pydantic',
+    Description:
+      'A data validation library that uses Python type hints to enforce data schemas, offering high-performance validation, serialization, and deserialization of complex data structures.',
+    Link: 'https://docs.pydantic.dev',
+    Layer: 'Model',
+    Components: 'Data Processing',
+    License: 'Open Source',
+  },
 ];
