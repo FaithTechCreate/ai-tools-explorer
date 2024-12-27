@@ -1948,4 +1948,40 @@ export const techStackData: TechStack[] = [
     Components: 'Data Processing',
     License: 'Open Source',
   },
+  {
+    Name: 'AutoGen',
+    Description:
+      'An open-source framework for building multi-agent AI applications that enables automated conversations between multiple agents, supporting LLMs, tools, and human-in-the-loop workflows.',
+    Link: 'https://github.com/microsoft/autogen',
+    Layer: 'Application',
+    Components: 'Model Orchestration, Agent',
+    License: 'Open Source',
+  },
+  {
+    Name: 'Zed',
+    Description:
+      'Zed is a next-generation code editor designed for high-performance collaboration with humans and AI..',
+    Link: 'https://zed.dev',
+    Layer: 'Application',
+    Components: 'Coding Assistant, IDE',
+    License: 'Open Source',
+  },
+  {
+    Name: 'phidata',
+    Description:
+      'An open-source framework for building multi-modal AI agents with memory, knowledge, tools, and reasoning capabilities, featuring built-in monitoring and a user interface for agent interactions.',
+    Link: 'https://docs.phidata.com/',
+    Layer: 'Application',
+    Components: 'Agent, Model Orchestration',
+    License: 'Open Source',
+  },
+  {
+    Name: 'Kling AI',
+    Description:
+      'A next-generation AI creative studio from Kuaishou Technology that enables text-to-video generation, video editing, and image creation using state-of-the-art generative AI methods.',
+    Link: 'https://klingai.com/',
+    Layer: 'Application',
+    Components: 'Content Creation',
+    License: 'Proprietary',
+  },
 ];
