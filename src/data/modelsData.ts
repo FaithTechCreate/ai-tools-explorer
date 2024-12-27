@@ -302,4 +302,22 @@ export const modelsData: Model[] = [
     Usage: 'Text generation, language understanding',
     License: 'Open Source',
   },
+  {
+    Name: 'Imagen 3',
+    Description:
+      "Google's advanced text-to-image AI model featuring improved image generation quality, better text rendering, reduced artifacts, and enterprise customization capabilities for brand-specific image creation.",
+    Link: 'https://deepmind.google/technologies/imagen-3/',
+    Type: 'Text-to-Image Generation',
+    Usage: 'Creating images from text descriptions, image editing',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'DeepSeek V3',
+    Description:
+      'A powerful Mixture-of-Experts (MoE) language model featuring 671B total parameters with 37B activated per token, delivering high performance while maintaining efficiency through selective neural network activation.',
+    Link: 'https://huggingface.co/deepseek-ai/deepseek-v3-base',
+    Type: 'Language Model',
+    Usage: 'Text generation, language understanding, code generation, reasoning tasks',
+    License: 'Open-ish',
+  },
 ];
