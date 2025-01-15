@@ -1360,7 +1360,7 @@ export const techStackData: TechStack[] = [
     Description: 'AI tool for Christian ministries',
     Link: 'https://faithcopilot.com/',
     Layer: 'Model',
-    Components: 'Playground',
+    Components: 'Evaluation',
     License: 'Proprietary',
   },
   {
@@ -1982,6 +1982,87 @@ export const techStackData: TechStack[] = [
     Link: 'https://klingai.com/',
     Layer: 'Application',
     Components: 'Content Creation',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Softgen',
+    Description:
+      'Softgen is your AI Web App Developer. Describe your vision, give instructions, and build full-stack web apps. No coding required.',
+    Link: 'https://softgen.ai',
+    Layer: 'Application',
+    Components: 'App Builder',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'ChainForge',
+    Description:
+      'An open-source visual programming environment for testing and evaluating LLM prompts, allowing users to compare multiple models, create prompt permutations, and perform hypothesis testing through a visual interface.',
+    Link: 'https://github.com/ianarawjo/ChainForge',
+    Layer: 'Model',
+    Components: 'Evaluation',
+    License: 'Open Source',
+  },
+  {
+    Name: 'Waveloom',
+    Description:
+      'A visual AI workflow builder platform that enables developers to create and deploy AI workflows by connecting various LLM models and services like GPT-4, Claude, and DALL-E through a visual interface or SDK.',
+    Link: 'https://www.waveloom.dev',
+    Layer: 'Application',
+    Components: 'Model Orchestration',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Hailuo AI',
+    Description:
+      'A comprehensive AI platform offering video generation, voice cloning, audio creation, and intelligent search capabilities. Features text-to-video conversion, lifelike speech synthesis in multiple languages, and visual content generation.',
+    Link: 'https://www.hailuo.ai',
+    Layer: 'Application',
+    Components: 'Content Creation',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'MiniMax Platform',
+    Description:
+      'A comprehensive AI platform offering large language models and multimodal capabilities including chat, text generation, music generation, text-to-audio conversion, and image generation with API access for developers.',
+    Link: 'https://www.minimaxi.com/en/platform',
+    Layer: 'Model',
+    Components: 'Model Serving, Fine-Tuning',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Langtrace',
+    Description:
+      'An open-source observability tool providing real-time tracing, evaluations, and metrics for LLM applications, supporting monitoring of LLM frameworks, vector databases, and model performance using OpenTelemetry.',
+    Link: 'https://www.langtrace.ai',
+    Layer: 'Observability',
+    Components: 'Logging, Monitoring',
+    License: 'Open Source',
+  },
+  {
+    Name: 'Smolagents',
+    Description:
+      'A lightweight, open-source library by Hugging Face for building AI agents that can execute code and use tools. Features built-in search capabilities, security measures, and integration with various LLMs through minimal code implementation.',
+    Link: 'https://github.com/huggingface/smolagents',
+    Layer: 'Application',
+    Components: 'Agent, Model Orchestration',
+    License: 'Open Source',
+  },
+  {
+    Name: 'Lovable',
+    Description:
+      'An AI-powered full-stack development platform that generates web applications from natural language, featuring Supabase integration, GitHub sync, and one-click deployment capabilities to accelerate application development.',
+    Link: 'https://lovable.dev',
+    Layer: 'Application',
+    Components: 'App Builder, Coding Assistant',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Blackbox AI',
+    Description:
+      'Blackbox.ai offers various AI-powered tools for developers, including code generation, code analysis, coding agent, and app builder.',
+    Link: 'https://www.blackbox.ai/',
+    Layer: 'Application',
+    Components: 'Agent, App Builder, Coding Assistant',
     License: 'Proprietary',
   },
 ];

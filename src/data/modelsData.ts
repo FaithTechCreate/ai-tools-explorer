@@ -101,7 +101,7 @@ export const modelsData: Model[] = [
     License: 'Open Source',
   },
   {
-    Name: 'Microsoft Phi 3',
+    Name: 'Microsoft Phi-3',
     Description:
       'Microsoft Phi is a large-scale AI model developed by Microsoft, aimed at advancing natural language processing and understanding.',
     Link: 'https://huggingface.co/microsoft/Phi-3-mini-128k-instruct',
@@ -319,5 +319,51 @@ export const modelsData: Model[] = [
     Type: 'Language Model',
     Usage: 'Text generation, language understanding, code generation, reasoning tasks',
     License: 'Open-ish',
+  },
+  {
+    Name: 'MiniMax-Text-01',
+    Description:
+      'A Mixture-of-Experts language model that features a hybrid architecture combining Lightning Attention and Softmax Attention, with context handling up to 4 million tokens and performance comparable to GPT-4o.',
+    Link: 'https://huggingface.co/MiniMaxAI/MiniMax-Text-01',
+    Type: 'Language Model',
+    Usage: 'Text generation, language understanding, code generation',
+    License: 'Open-ish',
+  },
+  {
+    Name: 'MiniMax-VL-01',
+    Description:
+      'A multimodal vision-language model that combines visual and language understanding. Features advanced capabilities in visual question answering, image captioning, and text-to-image search, with optimized visual consistency and seamless transitions between visual states.',
+    Link: 'https://huggingface.co/MiniMaxAI/MiniMax-VL-01',
+    Type: 'Vision-Language Model',
+    Usage: 'Visual question answering, image captioning, visual understanding, multimodal tasks',
+    License: 'Open-ish',
+  },
+  {
+    Name: 'Cosmos World Foundation Models',
+    Description:
+      "NVIDIA's platform of state-of-the-art generative world foundation models that can predict and generate physics-aware videos of future states in virtual environments.",
+    Link: 'https://developer.nvidia.com/cosmos',
+    Type: 'World Foundation Model',
+    Usage:
+      'Physical AI simulation, robotics development, autonomous vehicle training, physics-aware video generation',
+    License: 'Open-ish',
+  },
+  {
+    Name: 'VEO 2',
+    Description:
+      "Google DeepMind's advanced video generation model creating high-quality clips at up to 4K resolution.",
+    Link: 'https://deepmind.google/technologies/veo/veo-2/',
+    Type: 'Text-to-Video Generation',
+    Usage: 'Creating videos from text descriptions, cinematic content generation',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Microsoft Phi-4',
+    Description:
+      'A 14 billion parameter language model specializing in complex reasoning tasks. Features enhanced multi-lingual support, long-context handling up to 4,000 tokens, and advanced capabilities in STEM problem-solving. Trained primarily on synthetic data with architecture similar to Phi-3-medium.',
+    Link: 'https://huggingface.co/microsoft/phi-4',
+    Type: 'Language Model',
+    Usage: 'Text generation, complex reasoning, language understanding, code generation',
+    License: 'Open Source',
   },
 ];
