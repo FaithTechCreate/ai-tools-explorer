@@ -2065,4 +2065,31 @@ export const techStackData: TechStack[] = [
     Components: 'Agent, App Builder, Coding Assistant',
     License: 'Proprietary',
   },
+  {
+    Name: 'Windsurf Editor',
+    Description:
+      'A next-generation IDE powered by AI agents, featuring Cascade for collaborative coding, deep codebase understanding, and advanced code completion capabilities.',
+    Link: 'https://codeium.com/windsurf',
+    Layer: 'Application',
+    Components: 'Coding Assistant, IDE',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Tabby',
+    Description:
+      'Self-hosted AI coding assistant that provides real-time code completion and suggestions.',
+    Link: 'https://www.tabbyml.com/',
+    Layer: 'Application',
+    Components: 'Coding Assistant',
+    License: 'Open Source',
+  },
+  {
+    Name: 'Replit Agent',
+    Description:
+      'AI coding agent that autonomously develops entire applications from natural language descriptions, featuring environment setup, dependency management, and deployment capabilities.',
+    Link: 'https://replit.com/ai',
+    Layer: 'Application',
+    Components: 'Agent, App Builder, Coding Assistant',
+    License: 'Proprietary',
+  },
 ];

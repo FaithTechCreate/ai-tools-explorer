@@ -366,4 +366,14 @@ export const modelsData: Model[] = [
     Usage: 'Text generation, complex reasoning, language understanding, code generation',
     License: 'Open Source',
   },
+  {
+    Name: 'DeepSeek-R1',
+    Description:
+      'DeepSeek-R1 is a reasoning-focused language model, designed to excel at complex problem-solving tasks. It implements run-time reasoning similar to OpenAI o1 and stands out for its transparent decision-making process, particularly in mathematics, science, and coding challenges.',
+    Link: 'https://github.com/deepseek-ai/DeepSeek-R1',
+    Type: 'Language Model',
+    Usage:
+      'Complex reasoning tasks, mathematical problem solving, code generation, step-by-step analysis',
+    License: 'Open Source',
+  },
 ];
