@@ -376,4 +376,67 @@ export const modelsData: Model[] = [
       'Complex reasoning tasks, mathematical problem solving, code generation, step-by-step analysis',
     License: 'Open Source',
   },
+  {
+    Name: 'Ai2 Tülu 3',
+    Description:
+      'A state-of-the-art open-source language model family with 405B parameters, featuring fully transparent data, code, and training recipes.',
+    Link: 'https://allenai.org/tulu',
+    Type: 'Language Model',
+    Usage: 'Text generation, language understanding, instruction following',
+    License: 'Open Source',
+  },
+  {
+    Name: 'Alibaba Cloud Qwen 2.5-Max',
+    Description:
+      'A large-scale Mixture-of-Experts (MoE) language model from Alibaba Cloud that selectively activates parameter subsets for efficient processing.',
+    Link: 'https://qwenlm.github.io/blog/qwen2.5-max/',
+    Type: 'Language Model',
+    Usage: 'Text generation, language understanding, enterprise applications',
+    License: 'Open-ish',
+  },
+  {
+    Name: 'Mistral Small 3',
+    Description:
+      'A 24B parameter language model optimized for efficiency and low latency, capable of running on consumer hardware.',
+    Link: 'https://huggingface.co/mistralai/Mistral-Small-24B-Base-2501',
+    Type: 'Language Model',
+    Usage: 'Text generation, language understanding, local deployment',
+    License: 'Open Source',
+  },
+  {
+    Name: 'xAI Grok 3',
+    Description:
+      "Grok 3 is xAI's latest flagship large language model, trained on extensive data from X (formerly Twitter) and the web, featuring real-time data access and enhanced reasoning capabilities powered by 200 million GPU-hours of training.",
+    Link: 'https://x.ai/blog/grok-3',
+    Type: 'Language Model',
+    Usage: 'Text generation, language understanding, real-time information analysis',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Perplexity AI R1 1776',
+    Description:
+      'An open-source reasoning model based on DeepSeek-R1, post-trained by Perplexity AI to deliver uncensored, unbiased, and factual information while maintaining high reasoning capabilities.',
+    Link: 'https://huggingface.co/perplexity-ai/r1-1776',
+    Type: 'Language Model',
+    Usage: 'Text generation, reasoning tasks, uncensored information retrieval, factual analysis',
+    License: 'Open Source',
+  },
+  {
+    Name: 'Deepgram Nova 3',
+    Description:
+      'An advanced speech recognition model offering real-time multilingual transcription.',
+    Link: 'https://developers.deepgram.com/docs/models-languages-overview',
+    Type: 'Automatic Speech Recognition',
+    Usage: 'Speech-to-text transcription, multilingual audio processing',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'YuE',
+    Description:
+      'YuE is an open-source 7B parameter foundation model for generating complete musical compositions, capable of creating full-length songs with coherent vocals, instrumental accompaniment, and multi-genre adaptability. It supports multiple languages and vocal techniques while maintaining musical consistency throughout extended pieces.',
+    Link: 'https://huggingface.co/m-a-p/YuE-s1-7B-anneal-en-cot',
+    Type: 'Music Generation',
+    Usage: 'Full-song generation, vocal synthesis, instrumental composition, music production',
+    License: 'Open Source',
+  },
 ];

@@ -159,7 +159,7 @@ export const techStackData: TechStack[] = [
   },
   {
     Name: 'Bolt.new',
-    Description: 'AI-Powered Full-Stack Web Development in the Browser',
+    Description: 'AI-Powered full-Stack web and mobile development in the browser',
     Link: 'https://bolt.new/',
     Layer: 'Application',
     Components: 'App Builder',
@@ -1505,14 +1505,6 @@ export const techStackData: TechStack[] = [
     License: 'Proprietary',
   },
   {
-    Name: '',
-    Description: '',
-    Link: '',
-    Layer: 'Application',
-    Components: 'Content Creation',
-    License: 'Proprietary',
-  },
-  {
     Name: 'Locofy',
     Description:
       'Turn your designs into developer-friendly frontend code for mobile apps and web without changing your tech stack or workflows.',
@@ -2090,6 +2082,141 @@ export const techStackData: TechStack[] = [
     Link: 'https://replit.com/ai',
     Layer: 'Application',
     Components: 'Agent, App Builder, Coding Assistant',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Alibaba Cloud',
+    Description:
+      'Alibaba Cloud provides comprehensive AI infrastructure and services including compute, storage, and networking optimized for AI workloads, along with AI model training and inference capabilities.',
+    Link: 'https://www.alibabacloud.com/',
+    Layer: 'Infrastructure',
+    Components: 'Compute, Model Serving, Model Training',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Qwen Chat',
+    Description:
+      "Qwen Chat is Alibaba's AI chat interface powered by the Qwen model family, offering multilingual capabilities, real-time web search, text-to-video creation, image generation, and long-context understanding.",
+    Link: 'https://chat.qwenlm.ai/',
+    Layer: 'Application',
+    Components: 'Coding Assistant, Content Creation',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Aider',
+    Description:
+      'An open-source AI pair programming assistant that operates in your terminal, allowing you to edit code in local git repositories. Supports multiple LLM backends including Claude, DeepSeek, and OpenAI models, with features for repository-wide code understanding and modifications.',
+    Link: 'https://aider.chat/',
+    Layer: 'Application',
+    Components: 'Coding Assistant',
+    License: 'Open Source',
+  },
+  {
+    Name: 'Postman AI Agent Builder',
+    Description:
+      "A visual, low-code platform for building API-first AI agents that can interact with APIs and LLMs. Features include a drag-and-drop canvas, workflow automation, reusable components, and integration with Postman's API network of over 18,000 companies.",
+    Link: 'https://www.postman.com/product/ai-agent-builder/',
+    Layer: 'Application',
+    Components: 'App Builder, Agent',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Riffusion',
+    Description:
+      'A stable diffusion-based AI system for real-time music generation and audio synthesis that creates novel music by interpolating between audio embeddings.',
+    Link: 'https://www.riffusion.com/',
+    Layer: 'Application',
+    Components: 'Content Creation',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Suno',
+    Description:
+      'A powerful AI music generation platform that enables users to create high-quality songs with vocals and instrumentals from text descriptions, featuring advanced transformer and diffusion models for music synthesis.',
+    Link: 'https://suno.com/',
+    Layer: 'Application',
+    Components: 'Content Creation',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Udio',
+    Description:
+      'An AI-powered music generation platform that enables users to create, discover, and share AI-generated music.',
+    Link: 'https://www.udio.com/',
+    Layer: 'Application',
+    Components: 'Content Creation',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Builder.ai',
+    Description:
+      'A composable software development platform that uses AI to accelerate app creation by combining reusable features with custom development, offering automated coding, analytics, and design capabilities for businesses.',
+    Link: 'https://www.builder.ai/',
+    Layer: 'Application',
+    Components: 'App Builder',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Create',
+    Description:
+      'A free no-code AI app builder platform that enables users to create AI tools and automations using various AI models like Claude, GPT-4, and Stable Diffusion without writing code.',
+    Link: 'https://www.create.xyz/',
+    Layer: 'Application',
+    Components: 'App Builder',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Goose',
+    Description:
+      'An open-source, extensible AI agent platform that automates engineering tasks, featuring code execution, editing, and testing capabilities with support for multiple LLMs and customizable extensions.',
+    Link: 'https://block.github.io/goose/',
+    Layer: 'Application',
+    Components: 'Agent, Coding Assistant',
+    License: 'Open Source',
+  },
+  {
+    Name: 'Memex',
+    Description:
+      'A desktop-native AI development environment that transforms natural language into working applications, enabling developers to build software, web apps, and 3D designs through natural language interactions.',
+    Link: 'https://memex.tech/',
+    Layer: 'Application',
+    Components: 'App Builder, Coding Assistant',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Deepgram',
+    Description:
+      'A foundational AI platform providing speech-to-text, text-to-speech, and language intelligence capabilities through advanced models. Features include real-time transcription, multilingual support, custom model training, and API integrations for building voice-enabled applications.',
+    Link: 'https://deepgram.com/',
+    Layer: 'Application',
+    Components: 'Content Creation',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Trae',
+    Description:
+      'An adaptive AI-powered IDE from ByteDance that enhances development efficiency through intelligent collaboration. Features include automatic task breakdown, multimodal code generation, real-time assistance, and agent-based programming capabilities.',
+    Link: 'https://trae.ai/',
+    Layer: 'Application',
+    Components: 'Coding Assistant, IDE',
+    License: 'Proprietary',
+  },
+  {
+    Name: 'Mastra',
+    Description:
+      'An opinionated TypeScript framework for building AI applications that provides workflow graphs, agent systems, RAG pipelines, and integrations.',
+    Link: 'https://mastra.ai/',
+    Layer: 'Application',
+    Components: 'Model Orchestration, Agent, RAG',
+    License: 'Open Source',
+  },
+  {
+    Name: 'a0.dev',
+    Description:
+      'Build native mobile apps in days instead of weeks by generating full React Native apps and custom components with AI.',
+    Link: 'https://a0.dev/',
+    Layer: 'Application',
+    Components: 'App Builder, Coding Assistant',
     License: 'Proprietary',
   },
 ];
