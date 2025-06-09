@@ -2221,7 +2221,7 @@ export const techStackData: TechStack[] = [
   },
   {
   Name: 'Apologist Fusion',
-  Description: '[Apologist Fusion](https://apologistproject.org/products/apologist-fusion) is an API that allows developers to integrate our Christian apologetics Agents with their own applications. Apologist Fusion is fully compatible with the [OpenAI chat completions API specification](https://platform.openai.com/docs/api-reference/chat/create). This means that our API is a like-for-like swap for any application currently using the popular LLM chat completions API signature, and should be plug and play with any of the [many OpenAI SDKs in the language of your choice](https://platform.openai.com/docs/libraries).',
+  Description: 'Apologist Fusion (https://apologistproject.org/products/apologist-fusion) is an API that allows developers to integrate our Christian apologetics Agents with their own applications. Apologist Fusion is fully compatible with the OpenAI chat completions API specification (https://platform.openai.com/docs/api-reference/chat/create). This means that our API is a like-for-like swap for any application currently using the popular LLM chat completions API signature, and should be plug and play with any of the many OpenAI SDKs in the language of your choice (https://platform.openai.com/docs/libraries).',
   Link: 'https://apologistproject.org/products/apologist-agent',
   Layer: 'Application',
   Components: 'Conversational AI API',
